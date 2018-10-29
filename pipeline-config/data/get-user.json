@@ -1,0 +1,39 @@
+{
+  "name": "UserGetReceiverPipeline",
+  "components": [
+    {
+      "type": "UserAuthorise",
+      "events": {
+        "fail": "UserAuthoriseFailEvent",
+        "next": "UserAuthoriseNextEvent",
+        "finish": "UserAuthoriseFinishEvent"
+      },
+      "handlers": {
+        "failType": "PipelineFailHandler",
+        "nextType": "PipelineNextHandler",
+        "finishType": ""
+      },
+      "responders": {
+        "failType": "FailResponder401",
+        "finishType": ""
+      }
+    },
+    {
+      "type": "UserValidate",
+      "events": {
+        "fail": "UserValidateFailEvent",
+        "next": "UserValidateNextEvent",
+        "finish": "UserValidateFinishEvent"
+      },
+      "handlers": {
+        "failType": "PipelineFailHandler",
+        "nextType": "",
+        "finishType": "PipelineFinishHandler"
+      },
+      "responders": {
+        "failType": "FailResponder400",
+        "finishType": "SuccessResponder200"
+      }
+    }
+  ]
+}
