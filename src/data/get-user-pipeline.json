@@ -6,33 +6,33 @@
       "events": {
         "fail": "UserAuthoriseFailEvent",
         "next": "UserAuthoriseNextEvent",
-        "finish": "UserAuthoriseFinishEvent"
+        "finish": null
       },
       "handlers": {
-        "failType": "PipelineFailHandler",
-        "nextType": "PipelineNextHandler",
-        "finishType": ""
+        "fail": "FailHandler",
+        "next": "NextHandler",
+        "finish": null
       },
       "responders": {
-        "failType": "FailResponder401",
-        "finishType": ""
+        "fail": "FailResponder401",
+        "finish": null
       }
     },
     {
       "type": "UserValidate",
       "events": {
         "fail": "UserValidateFailEvent",
-        "next": "UserValidateNextEvent",
+        "next": null,
         "finish": "UserValidateFinishEvent"
       },
       "handlers": {
-        "failType": "PipelineFailHandler",
-        "nextType": "",
-        "finishType": "PipelineFinishHandler"
+        "fail": "FailHandler",
+        "next": null,
+        "finish": "FinishHandler"
       },
       "responders": {
-        "failType": "FailResponder400",
-        "finishType": "FinishResponder200"
+        "fail": "FailResponder400",
+        "finish": "FinishResponder200"
       }
     }
   ]

@@ -16,12 +16,13 @@ export default class GetUserController {
 
   public get(req: express.Request, res: express.Response, next: express.NextFunction): void {
     // @TODO: This can be done once in the constructor.
+    console.log('GETUSERCONTROLLER::GET')
     this.pipelineBuildDirector.assemble(this.pipelineConfig).next(req, res)
   }
 
   public createRouter(): express.Router {
     return express.Router()
-      .get("/{id}",
+      .get("/:id",
         (req: express.Request, res: express.Response, next: express.NextFunction): void => {
           this.get(req, res, next)
         })

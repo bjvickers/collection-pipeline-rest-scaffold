@@ -12,9 +12,9 @@ export default class FinishHandlerFactory {
   }
 
   public create(config: IComponentConfig): FinishHandler {
-    const responder: IFinishResponder = this.inject[config.responders.finishType]
+    const responder: IFinishResponder = this.inject[config.responders.finish]
     const factory: { create: (responder: IFinishResponder) => FinishHandler } =
-      this.inject[config.handlers.finishType]
+      this.inject[config.handlers.finish]
     return factory.create(responder)
   }
 }

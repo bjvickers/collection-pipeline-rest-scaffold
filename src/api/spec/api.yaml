@@ -1,71 +1,76 @@
 swagger: '2.0'
 info:
   version: '0.0.1'
-  title: 'Containerized-NodeJS-REST-Scaffold'
+  title: 'Collection-Pipeline-REST-Scaffold'
   description: 'REST API Scaffold'
+host: 127.0.0.1:3000
 basePath: /api/v1
 consumes:
   - application/json
 produces:
   - application/json
 schemes:
- - https
+ - http
 tags:
-  - name: Examples
-    description: Simple example endpoints
+  - name: Users
+    description: Simple user endpoints
   - name: Specification
     description: The swagger API specification
 
 definitions:
-  ExampleBody:
+  UserBody:
     type: object
-    title: example
+    title: user
     required:
+      - id
       - name
     properties:
+      id:
+        type: integer
+        example: 1
       name:
         type: string
-        example: this-is-an-example
+        example: username
 
 paths:
-  /examples:
+  /user:
     get:
       tags:
-        - Examples
-      description: Fetch all examples
+        - Users
+      description: Fetch all users
       responses:
         200:
-          description: Returns all examples
+          description: Returns all users
     post:
       tags:
-        - Examples
-      description: Create a new example
+        - Users
+      description: Create a new user
       parameters:
-        - name: example
+        - name: user
           in: body
-          description: an example
+          description: a user
           required: true
           schema: 
-            $ref: "#/definitions/ExampleBody"
+            $ref: "#/definitions/UserBody"
       responses:
         200:
-          description: Returns all examples
+          description: Returns all users
   
-  /examples/{id}:
+  /user/{id}:
     get:
       tags:
-        - Examples
+        - Users
       parameters:
         - name: id
           in: path
           required: true
-          description: The id of the example to retrieve
+          description: The id of the user to retrieve
           type: integer
       responses:
         200:
-          description: Return the example with the specified id
+          description: Return the user with the specified id
         404:
-          description: Example not found
+          description: User not found
   
   /spec:
     get:

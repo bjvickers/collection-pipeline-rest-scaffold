@@ -12,9 +12,9 @@ export default class FailHandlerFactory {
   }
 
   public create(config: IComponentConfig): FailHandler {
-    const responder: IFailResponder = this.inject[config.responders.failType]
+    const responder: IFailResponder = this.inject[config.responders.fail]
     const factory: { create: (responder: IFailResponder) => FailHandler }
-      = this.inject[config.handlers.failType]
+      = this.inject[config.handlers.fail]
     return factory.create(responder)
   }
 }

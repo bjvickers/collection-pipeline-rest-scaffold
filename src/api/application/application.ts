@@ -15,10 +15,11 @@ export default class Application {
 
   public constructor(inject: any) {
     this.getUserController = inject[TYPES.GetUserController]
-
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
+    
+    // @TODO: Move the spec file path string into configuration
     middleware(
       path.join(__dirname, "..", "spec", "api.yaml"),
       app,
@@ -61,12 +62,9 @@ export default class Application {
   }
 
   protected addErrorFailover(): void {
+    // @TODO: Formalise an appropriate error strategy
     app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {
-      res.status(500)
-      res.send(
-        "<h1>" + err.status + " Error</h1>" +
-        "<pre>" + err.message + "</pre>"
-      )
+      res.json({ status: 500, message: "An error occurred" })
     })
   }
 }

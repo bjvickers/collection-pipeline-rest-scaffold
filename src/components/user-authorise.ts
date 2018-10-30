@@ -15,6 +15,6 @@ export default class UserAuthorise extends Component {
    * @TODO: implement @Log()
   */
   public execute(req: express.Request, res: express.Response): void {
-    return
+    console.log('USERAUTHORISE::EXECUTE')
   }
 }
