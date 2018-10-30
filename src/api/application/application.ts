@@ -18,7 +18,7 @@ export default class Application {
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
-    
+
     // @TODO: Move the spec file path string into configuration
     middleware(
       path.join(__dirname, "..", "spec", "api.yaml"),

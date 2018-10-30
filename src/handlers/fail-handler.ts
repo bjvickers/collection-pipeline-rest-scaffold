@@ -7,7 +7,6 @@ export default class FailHandler {
   protected responder: IFailResponder
 
   public constructor(responder: IFailResponder) {
-    console.log('FAILHANDLER::CONSTRUCTOR')
     this.responder = responder
   }
 
