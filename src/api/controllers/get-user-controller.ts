@@ -1,27 +1,28 @@
 "use strict"
 
-import express from "express"
 import { AwilixContainer } from "awilix"
-import PipelineConfig from "../../config/pipeline-config"
-import PipelineFactory from "../../ioc/PipelineFactory"
+import express from "express"
+import IPipelineBuildDirector from "../../builders/i-pipeline-build-director"
+import IPipelineConfig from "../../config/i-pipeline-config"
 import TYPES from "../../ioc/types"
 
 export default class GetUserController {
-  protected pipelineFactory: PipelineFactory
-  protected pipelineConfig: PipelineConfig
-  
+  protected pipelineBuildDirector: IPipelineBuildDirector
+  protected pipelineConfig: IPipelineConfig
+
   public constructor(container: AwilixContainer) {
-    this.pipelineFactory = container.resolve(TYPES.PipelineFactory)
+    this.pipelineBuildDirector = container.resolve(TYPES.IPipelineBuildDirector)
     this.pipelineConfig = container.resolve(TYPES.GetUserPipeline)
   }
-  
+
   public get(req: express.Request, res: express.Response, next: express.NextFunction): void {
-    this.pipelineFactory.create(this.pipelineConfig).next(req, res)
+    // @TODO: This can be done once in the constructor.
+    this.pipelineBuildDirector.assemble(this.pipelineConfig).next(req, res)
   }
-  
+
   public createRouter(): express.Router {
     return express.Router()
-      .get("/{id}", 
+      .get("/{id}",
         (req: express.Request, res: express.Response, next: express.NextFunction): void => {
           this.get(req, res, next)
         })

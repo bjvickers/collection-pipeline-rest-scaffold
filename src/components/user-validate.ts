@@ -1,15 +1,15 @@
 "use strict"
 
 import express from "express"
-import Component from "./component"
-import ComponentConfig from "../config/component-config"
+import IComponentConfig from "../config/i-component-config"
 import User from "../models/user"
+import Component from "./component"
 
 export default class UserValidate extends Component {
-  public constructor(config: ComponentConfig) {
+  public constructor(config: IComponentConfig) {
     super(config)
   }
-  
+
   /*
    * @TODO: implement before/after aspect binding
    * @TODO: implement @Log()

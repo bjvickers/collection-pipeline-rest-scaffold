@@ -3,7 +3,7 @@
 const execa = require('execa')
 
 const action = async () => {
-  await execa("cp", ["-R", "src/api/api.yaml", "dist/api/api.yaml"])
+  await execa("cp", ["-R", "src/api/spec/api.yaml", "dist/api/spec/api.yaml"])
 }
 
 action()

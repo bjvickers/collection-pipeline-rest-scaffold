@@ -1,31 +1,35 @@
 "use strict"
 
-import express from "express"
 import { AwilixContainer } from "awilix"
-import GetUserController from "./controllers/get-user-controller"
 import bodyParser from "body-parser"
+import express from "express"
 import helmet from "helmet"
 import path from "path"
 import middleware from "swagger-express-middleware"
-import TYPES from "../ioc/types"
+import TYPES from "../../ioc/types"
+import GetUserController from "../controllers/get-user-controller"
 
 const app: express.Application = express()
 
 export default class Application {
   protected getUserController: GetUserController
-  
+
   public constructor(container: AwilixContainer) {
     this.getUserController = container.resolve(TYPES.GetUserController)
-        
+
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
     middleware(
-      path.join(__dirname, "..", "Api.yaml"),
+      path.join(__dirname, "..", "spec", "api.yaml"),
       app,
       (err: Error, middlewareIn: middleware.SwaggerMiddleware): void => this.swaggerify(err, middlewareIn))
   }
-  
+
+  public getRequestListener(): express.Application {
+    return app
+  }
+
   protected swaggerify(err: Error, middlewareIn: middleware.SwaggerMiddleware): void {
     // Enable Express' case-sensitive and strict options
     // (so "/entities", "/Entities", and "/Entities/" are all different)
@@ -48,15 +52,15 @@ export default class Application {
     app.use(
       middlewareIn.CORS(),
       middlewareIn.validateRequest())
-    
+
     this.addRoutes()
     this.addErrorFailover()
   }
-  
+
   protected addRoutes(): void {
     app.use("/api/v1/user", this.getUserController.createRouter())
   }
-  
+
   protected addErrorFailover(): void {
     app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {
       res.status(500)
@@ -65,9 +69,5 @@ export default class Application {
         "<pre>" + err.message + "</pre>"
       )
     })
-  }
-  
-  public getRequestListener(): express.Application {
-    return app
   }
 }

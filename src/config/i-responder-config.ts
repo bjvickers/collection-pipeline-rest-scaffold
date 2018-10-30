@@ -1,6 +1,6 @@
 "use strict"
 
-export default interface ResponderConfig {
+export default interface IResponderConfig {
   failType: string
   finishType: string
 }

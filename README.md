@@ -1,4 +1,4 @@
-# Containerized Nodejs REST Scaffold
+# NodeJS Collection Pipeline REST Scaffold
 
 ## Install
 ```
@@ -6,8 +6,7 @@ $ mkdir -vp scaffold
 $ cd scaffold  
 $ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
 $ npm install  
-$ npm run build  
-$ npm run qc   
+$ npm run build && npm run qc  
 ```
 
 
@@ -33,7 +32,7 @@ made to the Typescript files.
 
 ### Test
 ```
-$ npm test   
+$ npm run qc:test  
 ```
 
 

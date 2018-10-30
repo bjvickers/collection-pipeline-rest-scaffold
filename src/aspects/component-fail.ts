@@ -1,10 +1,10 @@
 "use strict"
 
 import Component from "../components/component"
-import Pipeline from "../pipeline/pipeline"
+import IPipeline from "../pipeline/i-pipeline"
 
 export default class AspectComponentFail {
-  public process(pipeline: Pipeline, component: Component, err: any): void {
+  public process(pipeline: IPipeline, component: Component, err: any): void {
     component.emit(component.getFailEvent(), { pipeline, err })
   }
 }

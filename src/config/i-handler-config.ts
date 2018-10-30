@@ -1,6 +1,6 @@
 "use strict"
 
-export default interface HandlerConfig {
+export default interface IHandlerConfig {
   failType: string
   nextType: string
   finishType: string

@@ -1,23 +1,26 @@
 "use strict"
 
 const TYPES = {
-  Server: "Server",
   Application: "Application",
-  GetUserController: "GetUserController",
+  ComponentFactory: "ComponentFactory",
+  FailHandler: "FailHandler",
+  FailHandlerFactory: "FailHandlerFactory",
   FailResponder404: "FailResponder404",
+  FinishHandler: "FinishHandler",
+  FinishHandlerFactory: "FinishHandlerFactory",
   FinishResponder200: "FinishResponder200",
-  UserAuthorise: "UserAuthorise",
-  UserValidate: "UserValidate",
-  User: "User",  
-  Pipeline: "Pipeline",
-  FailHandler: "PipelineFailHandler",
-  FinishHandler: "PipelineFinishHandler",
-  NextHandler: "PipelineNextHandler",
+  GetUserController: "GetUserController",
+  GetUserPipeline: "GetUserPipeline",
+  IPipeline: "IPipeline",
+  IPipelineBuildDirector: "IPipelineBuildDirector",
+  IPipelineBuilder: "IPipelineBuilder",
+  NextHandler: "NextHandler",
+  NextHandlerFactory: "NextHandlerFactory",
   PipelineFactory: "PipelineFactory",
-  PipelineFailHandlerFactory: "PipelineFailHandlerFactory",
-  PipelineFinishHandlerFactory: "PipelineFinishHandlerFactory",
-  PipelineNextHandlerFactory: "PipelineNextHandlerFactory",
-  GetUserPipeline: "GetUserPipeline"
+  Server: "Server",
+  User: "User",
+  UserAuthorise: "UserAuthorise",
+  UserValidate: "UserValidate"
 }
 
 export default TYPES

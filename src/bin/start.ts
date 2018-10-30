@@ -4,8 +4,8 @@
 import dotenv from "dotenv"
 dotenv.config()
 
+import Server from "../api/server/server"
 import iocboot from "../ioc/compose-root"
-import Server from "../api/server"
 import TYPES from "../ioc/types"
 
 const server: Server = iocboot().resolve(TYPES.Server)
