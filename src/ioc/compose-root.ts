@@ -3,7 +3,7 @@
 /**
  * This is the composition root for dependency injection
  */
-const awilix = require("awilix")
+import * as awilix from "awilix"
 import app from "./compose-app"
 import builders from "./compose-builders"
 import components from "./compose-components"
