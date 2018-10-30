@@ -3,7 +3,7 @@
 /**
  * This is the composition root for dependency injection
  */
-import * as awilix from "awilix"
+const awilix = require("awilix")
 import app from "./compose-app"
 import builders from "./compose-builders"
 import components from "./compose-components"
@@ -15,7 +15,7 @@ import pipeline from "./compose-pipeline"
 import responders from "./compose-responders"
 import servers from "./compose-server"
 
-let container: awilix.AwilixContainer | null
+let container: any
 
 export default function() {
   if (container) { return container }

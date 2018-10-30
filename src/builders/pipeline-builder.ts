@@ -1,6 +1,5 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import express from "express"
 import Component from "../components/component"
 import IComponentConfig from "../config/i-component-config"
@@ -25,12 +24,12 @@ export default class PipelineBuilder implements IPipelineBuilder {
   protected finishHandlerFactory: FinishHandlerFactory
   protected pipeline: IPipeline
 
-  public constructor(container: AwilixContainer) {
-    this.pipelineFactory = container.resolve(TYPES.PipelineFactory)
-    this.componentFactory = container.resolve(TYPES.ComponentFactory)
-    this.failHandlerFactory = container.resolve(TYPES.FailHandlerFactory)
-    this.nextHandlerFactory = container.resolve(TYPES.NextHandlerFactory)
-    this.finishHandlerFactory = container.resolve(TYPES.FinishHandlerFactory)
+  public constructor(inject: any) {
+    this.pipelineFactory = inject[TYPES.PipelineFactory]
+    this.componentFactory = inject[TYPES.ComponentFactory]
+    this.failHandlerFactory = inject[TYPES.FailHandlerFactory]
+    this.nextHandlerFactory = inject[TYPES.NextHandlerFactory]
+    this.finishHandlerFactory = inject[TYPES.FinishHandlerFactory]
   }
 
   public create(config: IPipelineConfig): void {

@@ -1,20 +1,19 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import IPipelineConfig from "../config/i-pipeline-config"
 import TYPES from "../ioc/types"
 import IPipeline from "../pipeline/i-pipeline"
 
 export default class PipelineFactory {
-  protected container: AwilixContainer
+  protected inject: any
 
-  public constructor(container: AwilixContainer) {
-    this.container = container
+  public constructor(inject: any) {
+    this.inject = inject
   }
 
   public create(config: IPipelineConfig): IPipeline {
     const factory: { create: (config: IPipelineConfig) => IPipeline } =
-      this.container.resolve(TYPES.IPipeline)
+      this.inject[TYPES.IPipeline]
     return factory.create(config)
   }
 }

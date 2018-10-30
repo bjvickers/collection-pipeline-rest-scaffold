@@ -1,21 +1,20 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import IComponentConfig from "../config/i-component-config"
 import FailHandler from "../handlers/fail-handler"
 import IFailResponder from "../responders/i-fail-responder"
 
 export default class FailHandlerFactory {
-  protected container: AwilixContainer
+  protected inject: any
 
-  public constructor(container: AwilixContainer) {
-    this.container = container
+  public constructor(inject: any) {
+    this.inject = inject
   }
 
   public create(config: IComponentConfig): FailHandler {
-    const responder: IFailResponder = this.container.resolve(config.responders.failType)
+    const responder: IFailResponder = this.inject[config.responders.failType]
     const factory: { create: (responder: IFailResponder) => FailHandler }
-      = this.container.resolve(config.handlers.failType)
+      = this.inject[config.handlers.failType]
     return factory.create(responder)
   }
 }

@@ -1,6 +1,5 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import bodyParser from "body-parser"
 import express from "express"
 import helmet from "helmet"
@@ -14,8 +13,8 @@ const app: express.Application = express()
 export default class Application {
   protected getUserController: GetUserController
 
-  public constructor(container: AwilixContainer) {
-    this.getUserController = container.resolve(TYPES.GetUserController)
+  public constructor(inject: any) {
+    this.getUserController = inject[TYPES.GetUserController]
 
     app.use(helmet())
     app.use(bodyParser.json())

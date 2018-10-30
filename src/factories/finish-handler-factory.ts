@@ -1,21 +1,20 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import IComponentConfig from "../config/i-component-config"
 import FinishHandler from "../handlers/finish-handler"
 import IFinishResponder from "../responders/i-finish-responder"
 
 export default class FinishHandlerFactory {
-  protected container: AwilixContainer
+  protected inject: any
 
-  public constructor(container: AwilixContainer) {
-    this.container = container
+  public constructor(inject: any) {
+    this.inject = inject
   }
 
   public create(config: IComponentConfig): FinishHandler {
-    const responder: IFinishResponder = this.container.resolve(config.responders.finishType)
+    const responder: IFinishResponder = this.inject[config.responders.finishType]
     const factory: { create: (responder: IFinishResponder) => FinishHandler } =
-      this.container.resolve(config.handlers.finishType)
+      this.inject[config.handlers.finishType]
     return factory.create(responder)
   }
 }

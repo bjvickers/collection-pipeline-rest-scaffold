@@ -1,20 +1,19 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import IComponentConfig from "../config/i-component-config"
 import NextHandler from "../handlers/next-handler"
 import IPipeline from "../pipeline/i-pipeline"
 
 export default class NextHandlerFactory {
-  protected container: AwilixContainer
+  protected inject: any
 
-  public constructor(container: AwilixContainer) {
-    this.container = container
+  public constructor(inject: any) {
+    this.inject = inject
   }
 
   public create(config: IComponentConfig, pipeline: IPipeline): NextHandler {
     const factory: { create: (pipeline: IPipeline) => NextHandler } =
-      this.container.resolve(config.handlers.nextType)
+      this.inject[config.handlers.nextType]
     return factory.create(pipeline)
   }
 }

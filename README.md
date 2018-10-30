@@ -10,7 +10,7 @@ $ npm run build && npm run qc
 ```
 
 
-## Develop and Staging
+## Local
 ### Run
 ```
 $ npm run start:basic  
@@ -36,7 +36,7 @@ $ npm run qc:test
 ```
 
 
-## Production
+## Staging & Production
 ### Run
 ```
 $ npm start   

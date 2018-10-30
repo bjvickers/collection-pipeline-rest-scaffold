@@ -1,19 +1,18 @@
 "use strict"
 
-import { AwilixContainer } from "awilix"
 import Component from "../components/component"
 import IComponentConfig from "../config/i-component-config"
 import TYPES from "../ioc/types"
 
 export default class ComponentFactory {
-  protected container: AwilixContainer
+  protected inject: any
 
-  public constructor(container: AwilixContainer) {
-    this.container = container
+  public constructor(inject: any) {
+    this.inject = inject
   }
 
   public create(config: IComponentConfig): Component {
-    const factory: { create: (config: IComponentConfig) => Component } = this.container.resolve(config.type)
+    const factory: { create: (config: IComponentConfig) => Component } = this.inject[config.type]
     return factory.create(config)
   }
 }

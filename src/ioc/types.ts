@@ -5,6 +5,8 @@ const TYPES = {
   ComponentFactory: "ComponentFactory",
   FailHandler: "FailHandler",
   FailHandlerFactory: "FailHandlerFactory",
+  FailResponder400: "FailResponder400",
+  FailResponder401: "FailResponder401",
   FailResponder404: "FailResponder404",
   FinishHandler: "FinishHandler",
   FinishHandlerFactory: "FinishHandlerFactory",

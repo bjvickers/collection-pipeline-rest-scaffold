@@ -32,7 +32,7 @@
       },
       "responders": {
         "failType": "FailResponder400",
-        "finishType": "SuccessResponder200"
+        "finishType": "FinishResponder200"
       }
     }
   ]
