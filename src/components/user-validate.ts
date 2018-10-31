@@ -11,12 +11,13 @@ export default class UserValidate extends Component {
   }
 
   /*
-   * @TODO: implement before/after aspect binding
    * @TODO: implement @Log()
    */
   public execute(req: express.Request, res: express.Response): void {
     // @TODO: How to inject userfactory - constructor or context?
     // const user: IUser = this.container.resolve(TYPES.UserFactory).createUser()
     // user.update(pipeline.getContext().request.userData)
+    // console.log("USERVALIDATE::EXECUTE")
+    return
   }
 }

@@ -10,11 +10,11 @@ export default class UserAuthorise extends Component {
   }
 
   /*
-   * @TODO: implement before/after aspect binding
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
   */
   public execute(req: express.Request, res: express.Response): void {
+    // console.log("USERAUTHORISE::EXECUTE")
     return
   }
 }
