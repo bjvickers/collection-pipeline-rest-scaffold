@@ -7,8 +7,9 @@ import IComponentConfig from "../config/i-component-config"
 import TYPES from "../ioc/types"
 
 // Attach aspects to the components
-// @TODO: Change 'import' to 'const' if meld ceases to work
-import meld = require("meld")
+/* tslint:disable */
+const meld = require("meld")
+/* tslint:enable */
 
 export default class ComponentFactory {
   protected inject: any
