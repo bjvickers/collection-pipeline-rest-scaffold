@@ -4,17 +4,21 @@ import express from "express"
 import IComponentConfig from "../config/i-component-config"
 import Component from "./component"
 
-export default class UserAuthorise extends Component {
+export default class TransformViewModelToDomain extends Component {
   public constructor(config: IComponentConfig) {
     super(config)
   }
 
   /*
-   * @TODO: implement method behaviour
-   * @TODO: implement @Log()
+   * Transforms Context.viewmodel data to Context.domain model(s)
+   *
+   * in: context.viewmodel
+   * out: context.domain
+   * onFail: FailHandler
+   * oonNext: NextHandler
   */
   public execute(req: express.Request, res: express.Response): void {
-    // console.log("USERAUTHORISE::EXECUTE")
+    // console.log("TransformViewModelToDomain::EXECUTE")
     return
   }
 }

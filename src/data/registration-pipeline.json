@@ -1,0 +1,104 @@
+{
+  "name": "RegistrationPipeline",
+  "components": [
+    {
+      "type": "AddContextEmails",
+      "events": {
+        "fail": "AddContextEmailsFailEvent",
+        "next": "AddContextEmailsNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500"
+      }
+    },
+    {
+      "type": "TransformViewModelToDomain",
+      "events": {
+        "fail": "TransformViewModelToDomainFailEvent",
+        "next": "TransformViewModelToDomainNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500"
+      }
+    },
+    {
+      "type": "EnforceUniqueUserEmail",
+      "events": {
+        "fail": "EnforceUniqueUserEmailFailEvent",
+        "next": "EnforceUniqueUserEmailNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder409"
+      }
+    },
+    {
+      "type": "TransformUserClearPassword",
+      "events": {
+        "fail": "TransformUserClearPasswordFailEvent",
+        "next": "TransformUserClearPasswordNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500"
+      }
+    },
+    {
+      "type": "SaveNewUserToDb",
+      "events": {
+        "fail": "SaveNewUserToDbFailEvent",
+        "next": "SaveNewUserToDbNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500"
+      }
+    },
+    {
+      "type": "BuildEmailTemplates",
+      "events": {
+        "fail": "BuildEmailTemplatesFailEvent",
+        "next": "BuildEmailTemplatesNextEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "next": "NextHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500"
+      }
+    },
+    {
+      "type": "SendEmails",
+      "events": {
+        "fail": "SendEmailsFailEvent",
+        "finish": "SendEmailsFinishEvent"
+      },
+      "handlers": {
+        "fail": "FailHandler",
+        "finish": "FinishHandler"
+      },
+      "responders": {
+        "fail": "FailResponder500",
+        "finish": "FinishResponder201"
+      }
+    }
+  ]
+}

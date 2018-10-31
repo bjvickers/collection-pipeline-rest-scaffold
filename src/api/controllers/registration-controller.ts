@@ -5,26 +5,25 @@ import IPipelineBuildDirector from "../../builders/i-pipeline-build-director"
 import IPipelineConfig from "../../config/i-pipeline-config"
 import TYPES from "../../ioc/types"
 
-export default class GetUserController {
+export default class RegistrationController {
   protected pipelineBuildDirector: IPipelineBuildDirector
   protected pipelineConfig: IPipelineConfig
 
   public constructor(inject: any) {
     this.pipelineBuildDirector = inject[TYPES.IPipelineBuildDirector]
-    this.pipelineConfig = inject[TYPES.GetUserPipeline]
+    this.pipelineConfig = inject[TYPES.RegistrationPipeline]
   }
 
-  public get(req: express.Request, res: express.Response, next: express.NextFunction): void {
+  public post(req: express.Request, res: express.Response, next: express.NextFunction): void {
     // @TODO: This can be done once in the constructor.
-    // console.log("GETUSERCONTROLLER::GET")
     this.pipelineBuildDirector.assemble(this.pipelineConfig).next(req, res)
   }
 
   public createRouter(): express.Router {
     return express.Router()
-      .get("/:id",
+      .post("/",
         (req: express.Request, res: express.Response, next: express.NextFunction): void => {
-          this.get(req, res, next)
+          this.post(req, res, next)
         })
   }
 }

@@ -24,7 +24,7 @@ Changes will be automatically transpiled and the application will automatically 
 $ npm run start:debug   
 ```
 Note that this is configured for remote debugging (for local debugging,
-change the IP address from 0.0.0.0 to 127.0.0.1. 
+change the IP address from 0.0.0.0 to 127.0.0.1).
 
 As with `start:basic`, auto-compilation and reload will occur on any changes
 made to the Typescript files.

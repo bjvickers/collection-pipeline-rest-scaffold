@@ -6,15 +6,15 @@ import helmet from "helmet"
 import path from "path"
 import middleware from "swagger-express-middleware"
 import TYPES from "../../ioc/types"
-import GetUserController from "../controllers/get-user-controller"
+import RegistrationController from "../controllers/registration-controller"
 
 const app: express.Application = express()
 
 export default class Application {
-  protected getUserController: GetUserController
+  protected controller: RegistrationController
 
   public constructor(inject: any) {
-    this.getUserController = inject[TYPES.GetUserController]
+    this.controller = inject[TYPES.RegistrationController]
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
@@ -53,12 +53,16 @@ export default class Application {
       middlewareIn.CORS(),
       middlewareIn.validateRequest())
 
+    // @TODO: Implement JWT extract and attach middleware
+    // @TODO: Implement JWT validation middleware
+    // @TODO: Implement the ACL checks, based on the JWT (or its absence), as a middleware
     this.addRoutes()
     this.addErrorFailover()
   }
 
   protected addRoutes(): void {
-    app.use("/api/v1/user", this.getUserController.createRouter())
+    // @TODO: Implement recaptcha verification as a middleware on the relevant route
+    app.use("/api/v1/user", this.controller.createRouter())
   }
 
   protected addErrorFailover(): void {

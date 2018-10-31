@@ -38,7 +38,7 @@
     "qc:report:complexity": "plato -r -q -d reports/complexity -x .js.map dist",
     "qc:report:reminders": "leasot --exit-nicely --reporter markdown --ignore node_modules src/**/*.ts | marked -s > ./reports/reminders/index.html",
     "start:basic": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./dist/bin/start.js\"",
-    "start:debug": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js\"",
+    "start:debug": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect=0.0.0.0:9229 ./dist/bin/start.js\"",
     "start": "pm2 start ./dist/bin/start.js -i \"max\" -- --production",
     "fix-code-style": "tslint --fix --config tslint.json \"src/**/*.ts\"",
     "watch-ts": "tsc -w"

@@ -29,7 +29,7 @@ export default class ComponentFactory {
   }
 
   /**
-   * @TODO: See if we can create a HandlerDespatchFactory
+   * @TODO: See if we can extract this to another class/module
    *
    * Responsible for despatching to the appropriate event handler on
    * component.execute() success or failure.

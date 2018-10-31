@@ -1,81 +1,59 @@
 swagger: '2.0'
 info:
-  version: '0.0.1'
-  title: 'Collection-Pipeline-REST-Scaffold'
-  description: 'REST API Scaffold'
+  description: |
+    Component Pipeline REST Scaffold
+  version: 1.0.0
+  title: Component Pipeline REST Scaffold
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
 host: 127.0.0.1:3000
 basePath: /api/v1
+schemes:
+ - http
+ - https
 consumes:
   - application/json
 produces:
   - application/json
-schemes:
- - http
 tags:
-  - name: Users
-    description: Simple user endpoints
-  - name: Specification
-    description: The swagger API specification
-
+- name: user
+  description: Operations about user
+  externalDocs:
+    description: Find out more about our store
+    url: http://swagger.io
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      parameters:
+      - in: body
+        name: body
+        description: Created user object
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        default:
+          description: successful operation
 definitions:
-  UserBody:
+  User:
     type: object
-    title: user
-    required:
-      - id
-      - name
     properties:
       id:
         type: integer
-        example: 1
-      name:
+        format: int64
+      firstName:
         type: string
-        example: username
-
-paths:
-  /user:
-    get:
-      tags:
-        - Users
-      description: Fetch all users
-      responses:
-        200:
-          description: Returns all users
-    post:
-      tags:
-        - Users
-      description: Create a new user
-      parameters:
-        - name: user
-          in: body
-          description: a user
-          required: true
-          schema: 
-            $ref: "#/definitions/UserBody"
-      responses:
-        200:
-          description: Returns all users
-  
-  /user/{id}:
-    get:
-      tags:
-        - Users
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The id of the user to retrieve
-          type: integer
-      responses:
-        200:
-          description: Return the user with the specified id
-        404:
-          description: User not found
-  
-  /spec:
-    get:
-      tags:
-        - Specification
-      responses:
-        200:
-          description: Return the API specification
+      lastName:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+    xml:
+      name: User
