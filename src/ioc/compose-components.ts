@@ -2,10 +2,10 @@
 
 import * as awilix from "awilix"
 import AddContextEmails from "../components/add-context-emails"
-import BuildDbQueryFindUserByEmail from "../components/build-db-query-find-user-by-email"
+import BuildDbQueryFromContext from "../components/build-db-query-from-context"
 import BuildEmailTemplates from "../components/build-email-templates"
 import EnforceUniqueUserEmail from "../components/enforce-unique-user-email"
-import FindDbUser from "../components/find-dbuser"
+import RunDbQuery from "../components/run-db-query"
 import SaveNewUserToDb from "../components/save-new-user-to-db"
 import SendEmails from "../components/send-emails"
 import TransformUserClearPassword from "../components/transform-user-clear-password"
@@ -24,11 +24,11 @@ export default function() {
     [TYPES.EnforceUniqueUserEmail]: awilix.asValue({
       create: (config: IComponentConfig) => new EnforceUniqueUserEmail(config)
     }),
-    [TYPES.BuildDbQueryFindUserByEmail]: awilix.asValue({
-      create: (config: IComponentConfig) => new BuildDbQueryFindUserByEmail(config)
+    [TYPES.BuildDbQueryFromContext]: awilix.asValue({
+      create: (config: IComponentConfig) => new BuildDbQueryFromContext(config)
     }),
-    [TYPES.FindDbUser]: awilix.asValue({
-      create: (config: IComponentConfig) => new FindDbUser(config)
+    [TYPES.RunDbQuery]: awilix.asValue({
+      create: (config: IComponentConfig) => new RunDbQuery(config)
     }),
     [TYPES.TransformUserClearPassword]: awilix.asValue({
       create: (config: IComponentConfig) => new TransformUserClearPassword(config)

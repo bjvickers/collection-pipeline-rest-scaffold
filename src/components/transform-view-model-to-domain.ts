@@ -2,6 +2,7 @@
 
 import express from "express"
 import IComponentConfig from "../config/i-component-config"
+import { domainLogger } from "../lib/log/logger"
 import Component from "./component"
 
 export default class TransformViewModelToDomain extends Component {
@@ -18,7 +19,7 @@ export default class TransformViewModelToDomain extends Component {
    * oonNext: NextHandler
   */
   public execute(req: express.Request, res: express.Response): void {
-    // console.log("TransformViewModelToDomain::EXECUTE")
+    domainLogger.info({ component: this.constructor.name })
     return
   }
 }

@@ -13,7 +13,7 @@ $ npm run build && npm run qc
 ## Local
 ### Run
 ```
-$ npm run start:basic  
+$ npm run start:reload  
 ```
 This will run the app whilst monitoring any changes to the Typescript files.
 Changes will be automatically transpiled and the application will automatically reload.
@@ -21,12 +21,12 @@ Changes will be automatically transpiled and the application will automatically 
 
 ### Debug
 ```
-$ npm run start:debug   
+$ npm run start:reload:debug  
 ```
 Note that this is configured for remote debugging (for local debugging,
 change the IP address from 0.0.0.0 to 127.0.0.1).
 
-As with `start:basic`, auto-compilation and reload will occur on any changes
+As with `start:reload`, auto-compilation and reload will occur on any changes
 made to the Typescript files.
 
 

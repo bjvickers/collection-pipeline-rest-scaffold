@@ -2,6 +2,7 @@
 
 import express from "express"
 import IComponentConfig from "../config/i-component-config"
+import { domainLogger } from "../lib/log/logger"
 import Component from "./component"
 
 export default class BuildEmailTemplates extends Component {
@@ -20,7 +21,7 @@ export default class BuildEmailTemplates extends Component {
    * onNext: NextHandler
   */
   public execute(req: express.Request, res: express.Response): void {
-    // console.log("BuildEmailTemplates::EXECUTE")
+    domainLogger.info({ component: this.constructor.name })
     return
   }
 }
