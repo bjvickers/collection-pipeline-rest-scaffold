@@ -30,7 +30,7 @@ const TYPES = {
   RegistrationController: "RegistrationController",
   RegistrationPipeline: "RegistrationPipeline",
   SaveNewUserToDb: "SaveNewUserToDb",
-  SendEmails: "SendEmails"
+  SendEmails: "SendEmails",
   Server: "Server",
   TransformUserClearPassword: "TransformUserClearPassword",
   TransformViewModelToDomain: "TransformViewModelToDomain",
