@@ -7,7 +7,7 @@ import * as awilix from "awilix"
 import app from "./compose-app"
 import builders from "./compose-builders"
 import components from "./compose-components"
-import datas from "./compose-data"
+import configs from "./compose-config"
 import factories from "./compose-factories"
 import handlers from "./compose-handlers"
 import models from "./compose-models"
@@ -27,7 +27,7 @@ export default function() {
   container.register(app())
   container.register(builders())
   container.register(components())
-  container.register(datas())
+  container.register(configs())
   container.register(factories())
   container.register(handlers())
   container.register(models())

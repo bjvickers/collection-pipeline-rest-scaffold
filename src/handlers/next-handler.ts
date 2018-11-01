@@ -1,7 +1,7 @@
 "use strict"
 
-import IContext from "../context/i-context"
 import IPipeline from "../pipeline/i-pipeline"
+import IContext from "../schema/context/i-context"
 import IHandler from "./i-handler"
 
 export default class NextHandler implements IHandler {

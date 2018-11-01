@@ -1,8 +1,8 @@
 "use strict"
 
 import EventEmitter from "events"
-import IComponentConfig from "../config/i-component-config"
-import IContext from "../context/i-context"
+import IComponentConfig from "../schema/config/i-component-config"
+import IContext from "../schema/context/i-context"
 
 export default abstract class Component extends EventEmitter {
   protected config: IComponentConfig

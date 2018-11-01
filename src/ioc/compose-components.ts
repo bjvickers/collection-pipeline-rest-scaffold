@@ -13,7 +13,7 @@ import TransformModelsDomainToDb from "../components/transform-models-domain-to-
 import TransformModelsDomainToView from "../components/transform-models-domain-to-view"
 import TransformModelsViewToDomain from "../components/transform-models-view-to-domain"
 import TransformUserClearPassword from "../components/transform-user-clear-password"
-import IComponentConfig from "../config/i-component-config"
+import IComponentConfig from "../schema/config/i-component-config"
 import TYPES from "./types"
 
 export default function() {

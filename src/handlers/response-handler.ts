@@ -1,7 +1,7 @@
 "use strict"
 
-import IContext from "../context/i-context"
 import IResponder from "../responders/i-responder"
+import IContext from "../schema/context/i-context"
 import IHandler from "./i-handler"
 
 export default class ResponseHandler implements IHandler {

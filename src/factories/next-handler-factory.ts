@@ -1,8 +1,8 @@
 "use strict"
 
-import IComponentConfig from "../config/i-component-config"
 import NextHandler from "../handlers/next-handler"
 import IPipeline from "../pipeline/i-pipeline"
+import IComponentConfig from "../schema/config/i-component-config"
 
 export default class NextHandlerFactory {
   protected inject: any

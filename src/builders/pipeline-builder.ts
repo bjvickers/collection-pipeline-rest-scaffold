@@ -1,9 +1,6 @@
 "use strict"
 
 import Component from "../components/component"
-import IComponentConfig from "../config/i-component-config"
-import IPipelineConfig from "../config/i-pipeline-config"
-import IContext from "../context/i-context"
 import ComponentFactory from "../factories/component-factory"
 import NextHandlerFactory from "../factories/next-handler-factory"
 import PipelineFactory from "../factories/pipeline-factory"
@@ -12,6 +9,9 @@ import NextHandler from "../handlers/next-handler"
 import ResponseHandler from "../handlers/response-handler"
 import TYPES from "../ioc/types"
 import IPipeline from "../pipeline/i-pipeline"
+import IComponentConfig from "../schema/config/i-component-config"
+import IPipelineConfig from "../schema/config/i-pipeline-config"
+import IContext from "../schema/context/i-context"
 import IPipelineBuilder from "./i-pipeline-builder"
 
 export default class PipelineBuilder implements IPipelineBuilder {

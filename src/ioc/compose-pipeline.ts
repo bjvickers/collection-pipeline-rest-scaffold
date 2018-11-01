@@ -1,8 +1,8 @@
 "use strict"
 
 import * as awilix from "awilix"
-import IPipelineConfig from "../config/i-pipeline-config"
 import Pipeline from "../pipeline/pipeline"
+import IPipelineConfig from "../schema/config/i-pipeline-config"
 import TYPES from "./types"
 
 export default function() {

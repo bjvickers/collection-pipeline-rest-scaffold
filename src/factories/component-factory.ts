@@ -2,8 +2,8 @@
 
 import EventEmitter from "events"
 import Component from "../components/component"
-import IComponentConfig from "../config/i-component-config"
 import TYPES from "../ioc/types"
+import IComponentConfig from "../schema/config/i-component-config"
 
 // Attach aspects to the components
 /* tslint:disable */

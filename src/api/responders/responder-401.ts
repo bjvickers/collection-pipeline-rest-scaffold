@@ -1,7 +1,7 @@
 "use strict"
 
-import IContext from "../../context/i-context"
 import IResponder from "../../responders/i-responder"
+import IContext from "../../schema/context/i-context"
 
 export default class Responder401 implements IResponder {
   // @TODO: Update responder to return responses consistent with the

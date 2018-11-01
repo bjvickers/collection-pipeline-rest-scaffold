@@ -1,10 +1,8 @@
 "use strict"
 
-// @TODO: are these necessary here, even though they are included in the
-// @TODO: interface 'i-context' file?
 import Component from "../components/component"
-import IPipelineConfig from "../config/i-pipeline-config"
-import IContext from "../context/i-context"
+import IPipelineConfig from "../schema/config/i-pipeline-config"
+import IContext from "../schema/context/i-context"
 import IPipeline from "./i-pipeline"
 
 export default class Pipeline implements IPipeline {

@@ -2,9 +2,9 @@
 
 import express from "express"
 import IPipelineBuildDirector from "../../builders/i-pipeline-build-director"
-import IPipelineConfig from "../../config/i-pipeline-config"
-import IContext from "../../context/i-context"
 import TYPES from "../../ioc/types"
+import IPipelineConfig from "../../schema/config/i-pipeline-config"
+import IContext from "../../schema/context/i-context"
 
 export default class RegistrationController {
   protected pipelineBuildDirector: IPipelineBuildDirector

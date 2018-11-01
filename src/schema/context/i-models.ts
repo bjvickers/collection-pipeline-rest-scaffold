@@ -1,6 +1,6 @@
 "use strict"
 
-import IUser from "../models/i-user"
+import IUser from "../../models/i-user"
 
 export default interface IModels {
   session: any
