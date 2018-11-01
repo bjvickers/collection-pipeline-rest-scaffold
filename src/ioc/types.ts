@@ -4,8 +4,8 @@
 // @TODO: COMPONENTS.<etc>, HANDLERS.<etc>, FACTORIES.<etc>
 const TYPES = {
   AddContextEmails: "AddContextEmails",
-  AssertDbUniqueUserEmail: "AssertDbUniqueUserEmail",
   Application: "Application",
+  AssertDbUniqueUserEmail: "AssertDbUniqueUserEmail",
   BuildDbQueryFromContext: "BuildDbQueryFromContext",
   BuildEmailTemplates: "BuildEmailTemplates",
   ComponentFactory: "ComponentFactory",
