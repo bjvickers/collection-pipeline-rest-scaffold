@@ -13,12 +13,7 @@ export default class RunDbQuery extends Component {
   /*
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
-   * Runs the query stored in the Context.
-   *
-   * in: context.db
-   * out: context.db
-   * onFail: FailHandler
-   * onNext: NextHandler
+   * Runs the query stored in the Context. Stores result in context.
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })

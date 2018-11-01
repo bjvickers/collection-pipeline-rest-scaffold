@@ -13,13 +13,8 @@ export default class TransformUserClearPassword extends Component {
   /*
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
-   * Transforms the clear-text context.user.clearPassword into an
-   * encrypted password, and stores in context.user.encPassword
-   *
-   * in: context.domain.user.clearPassword
-   * out: context.db.user.encPassword
-   * onFail: FailHandler
-   * oonNext: NextHandler
+   * Transforms the clear-text context.models.domain.user.clearPassword into an
+   * encrypted password, and stores in context.models.domain.user.encPassword
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })

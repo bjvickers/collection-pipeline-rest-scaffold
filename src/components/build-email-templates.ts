@@ -13,12 +13,8 @@ export default class BuildEmailTemplates extends Component {
   /*
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
-   * Builds the email templates, ready for send.
-   *
-   * in: context.emails
-   * out: context.emails.outDir
-   * onFail: FinishHandler (exit gracefully. user can later return and request resend)
-   * onNext: NextHandler
+   * Builds the email templates, ready for send. Adds location of
+   * built emails to context.
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })

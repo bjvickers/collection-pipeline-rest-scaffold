@@ -4,16 +4,17 @@
 // @TODO: COMPONENTS.<etc>, HANDLERS.<etc>, FACTORIES.<etc>
 const TYPES = {
   AddContextEmails: "AddContextEmails",
+  AssertDbUniqueUserEmail: "AssertDbUniqueUserEmail",
   Application: "Application",
   BuildDbQueryFromContext: "BuildDbQueryFromContext",
   BuildEmailTemplates: "BuildEmailTemplates",
   ComponentFactory: "ComponentFactory",
-  EnforceUniqueUserEmail: "EnforceUniqueUserEmail",
   IPipeline: "IPipeline",
   IPipelineBuildDirector: "IPipelineBuildDirector",
   IPipelineBuilder: "IPipelineBuilder",
   NextHandler: "NextHandler",
   NextHandlerFactory: "NextHandlerFactory",
+  PersistNewDbModel: "PersistNewDbModel",
   PipelineFactory: "PipelineFactory",
   RegistrationController: "RegistrationController",
   RegistrationPipeline: "RegistrationPipeline",
@@ -27,11 +28,13 @@ const TYPES = {
   ResponseHandler: "ResponseHandler",
   ResponseHandlerFactory: "ResponseHandlerFactory",
   RunDbQuery: "RunDbQuery",
-  SaveNewUserToDb: "SaveNewUserToDb",
   SendEmails: "SendEmails",
   Server: "Server",
+  TransformModelsDbToDomain: "TransformModelsDbToDomain",
+  TransformModelsDomainToDb: "TransformModelsDomainToDb",
+  TransformModelsDomainToView: "TransformModelsDomainToView",
+  TransformModelsViewToDomain: "TransformModelsViewToDomain",
   TransformUserClearPassword: "TransformUserClearPassword",
-  TransformViewModelToDomain: "TransformViewModelToDomain",
   User: "User"
 }
 

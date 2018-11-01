@@ -2,11 +2,11 @@
   "name": "RegistrationPipeline",
   "components": [
     {
-      "desc": "Add registration emails to the context, for later build",
-      "type": "AddContextEmails",
+      "desc": "Transform the (User) view model into the (User) domain model. Validates data as part of the process.",
+      "type": "TransformModelsViewToDomain",
       "events": {
-        "fail": "AddContextEmailsFailEvent",
-        "success": "AddContextEmailsNextEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -17,11 +17,11 @@
       }
     },
     {
-      "desc": "Transform the User viewmodel into the User domain model",
-      "type": "TransformViewModelToDomain",
+      "desc": "Convert the domain User cleartext password to encrypted.",
+      "type": "TransformUserClearPassword",
       "events": {
-        "fail": "TransformViewModelToDomainFailEvent",
-        "success": "TransformViewModelToDomainNextEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -32,11 +32,26 @@
       }
     },
     {
-      "desc": "Ensure that the email is not already in the database",
-      "type": "EnforceUniqueUserEmail",
+      "desc": "Transform the (User) domain model into the (User) db model.",
+      "type": "TransformModelsDomainToDb",
       "events": {
-        "fail": "EnforceUniqueUserEmailFailEvent",
-        "success": "EnforceUniqueUserEmailNextEvent"
+        "fail": "fail",
+        "success": "success"
+      },
+      "handlers": {
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
+      },
+      "responders": {
+        "fail": "Responder500"
+      }
+    },
+    {
+      "desc": "Ensure that the proposed User email is not already in the database",
+      "type": "AssertDbUniqueUserEmail",
+      "events": {
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -47,11 +62,11 @@
       }
     },
     {
-      "desc": "Convert the user's cleartext password to encrypted",
-      "type": "TransformUserClearPassword",
+      "desc": "Save the new User to the database",
+      "type": "PersistNewDbModel",
       "events": {
-        "fail": "TransformUserClearPasswordFailEvent",
-        "success": "TransformUserClearPasswordNextEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -62,11 +77,11 @@
       }
     },
     {
-      "desc": "Save the user to the database",
-      "type": "SaveNewUserToDb",
+      "desc": "Add registration emails to the context",
+      "type": "AddContextEmails",
       "events": {
-        "fail": "SaveNewUserToDbFailEvent",
-        "success": "SaveNewUserToDbNextEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -80,8 +95,8 @@
       "desc": "Build the registration emails",
       "type": "BuildEmailTemplates",
       "events": {
-        "fail": "BuildEmailTemplatesFailEvent",
-        "success": "BuildEmailTemplatesNextEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",
@@ -95,8 +110,8 @@
       "desc": "Send the registration emails",
       "type": "SendEmails",
       "events": {
-        "fail": "SendEmailsFailEvent",
-        "success": "SendEmailsFinishEvent"
+        "fail": "fail",
+        "success": "success"
       },
       "handlers": {
         "fail": "ResponseHandler",

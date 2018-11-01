@@ -14,11 +14,6 @@ export default class SendEmails extends Component {
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
    * Sends the emails defined in context.emails
-   *
-   * in: context.emails
-   * out: null
-   * onFail: FinishHandler (exit gracefully. user can later return and request resend)
-   * onNext: NextHandler
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })
