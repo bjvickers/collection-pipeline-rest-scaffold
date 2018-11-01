@@ -1,10 +1,9 @@
 "use strict"
 
-import express from "express"
 import IContext from "../../context/i-context"
-import IFailResponder from "../../responders/i-fail-responder"
+import IResponder from "../../responders/i-responder"
 
-export default class FailResponder404 implements IFailResponder {
+export default class Responder404 implements IResponder {
   public handle(err: any, context: IContext): void {
     context.api.outgoing.json({ status: 404, message: err.message })
   }

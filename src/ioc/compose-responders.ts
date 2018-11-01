@@ -1,23 +1,23 @@
 "use strict"
 
 import * as awilix from "awilix"
-import FailResponder400 from "../api/responders/fail-responder-400"
-import FailResponder401 from "../api/responders/fail-responder-401"
-import FailResponder404 from "../api/responders/fail-responder-404"
-import FailResponder409 from "../api/responders/fail-responder-409"
-import FailResponder500 from "../api/responders/fail-responder-500"
-import FinishResponder200 from "../api/responders/finish-responder-200"
-import FinishResponder201 from "../api/responders/finish-responder-201"
+import Responder200 from "../api/responders/responder-200"
+import Responder201 from "../api/responders/responder-201"
+import Responder400 from "../api/responders/responder-400"
+import Responder401 from "../api/responders/responder-401"
+import Responder404 from "../api/responders/responder-404"
+import Responder409 from "../api/responders/responder-409"
+import Responder500 from "../api/responders/responder-500"
 import TYPES from "./types"
 
 export default function() {
   return {
-    [TYPES.FailResponder400]: awilix.asClass(FailResponder400),
-    [TYPES.FailResponder401]: awilix.asClass(FailResponder401),
-    [TYPES.FailResponder404]: awilix.asClass(FailResponder404),
-    [TYPES.FailResponder409]: awilix.asClass(FailResponder409),
-    [TYPES.FailResponder500]: awilix.asClass(FailResponder500),
-    [TYPES.FinishResponder200]: awilix.asClass(FinishResponder200),
-    [TYPES.FinishResponder201]: awilix.asClass(FinishResponder201)
+    [TYPES.Responder400]: awilix.asClass(Responder400),
+    [TYPES.Responder401]: awilix.asClass(Responder401),
+    [TYPES.Responder404]: awilix.asClass(Responder404),
+    [TYPES.Responder409]: awilix.asClass(Responder409),
+    [TYPES.Responder500]: awilix.asClass(Responder500),
+    [TYPES.Responder200]: awilix.asClass(Responder200),
+    [TYPES.Responder201]: awilix.asClass(Responder201)
   }
 }

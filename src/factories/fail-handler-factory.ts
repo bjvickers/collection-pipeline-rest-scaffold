@@ -2,7 +2,7 @@
 
 import IComponentConfig from "../config/i-component-config"
 import FailHandler from "../handlers/fail-handler"
-import IFailResponder from "../responders/i-fail-responder"
+import IResponder from "../responders/i-responder"
 
 export default class FailHandlerFactory {
   protected inject: any
@@ -12,8 +12,8 @@ export default class FailHandlerFactory {
   }
 
   public create(config: IComponentConfig): FailHandler {
-    const responder: IFailResponder = this.inject[config.responders.fail]
-    const factory: { create: (responder: IFailResponder) => FailHandler }
+    const responder: IResponder = this.inject[config.responders.fail]
+    const factory: { create: (responder: IResponder) => FailHandler }
       = this.inject[config.handlers.fail]
     return factory.create(responder)
   }

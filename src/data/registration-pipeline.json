@@ -13,7 +13,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder500"
+        "fail": "Responder500"
       }
     },
     {
@@ -28,7 +28,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder500"
+        "fail": "Responder500"
       }
     },
     {
@@ -43,7 +43,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder409"
+        "fail": "Responder409"
       }
     },
     {
@@ -58,7 +58,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder500"
+        "fail": "Responder500"
       }
     },
     {
@@ -73,7 +73,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder500"
+        "fail": "Responder500"
       }
     },
     {
@@ -88,7 +88,7 @@
         "next": "NextHandler"
       },
       "responders": {
-        "fail": "FailResponder500"
+        "fail": "Responder500"
       }
     },
     {
@@ -103,8 +103,8 @@
         "finish": "FinishHandler"
       },
       "responders": {
-        "fail": "FailResponder500",
-        "finish": "FinishResponder201"
+        "fail": "Responder500",
+        "finish": "Responder201"
       }
     }
   ]

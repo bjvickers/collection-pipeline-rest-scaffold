@@ -2,7 +2,7 @@
 
 import IComponentConfig from "../config/i-component-config"
 import FinishHandler from "../handlers/finish-handler"
-import IFinishResponder from "../responders/i-finish-responder"
+import IResponder from "../responders/i-responder"
 
 export default class FinishHandlerFactory {
   protected inject: any
@@ -12,8 +12,8 @@ export default class FinishHandlerFactory {
   }
 
   public create(config: IComponentConfig): FinishHandler {
-    const responder: IFinishResponder = this.inject[config.responders.finish]
-    const factory: { create: (responder: IFinishResponder) => FinishHandler } =
+    const responder: IResponder = this.inject[config.responders.finish]
+    const factory: { create: (responder: IResponder) => FinishHandler } =
       this.inject[config.handlers.finish]
     return factory.create(responder)
   }

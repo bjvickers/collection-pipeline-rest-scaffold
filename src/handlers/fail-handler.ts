@@ -1,12 +1,12 @@
 "use strict"
 
 import IContext from "../context/i-context"
-import IFailResponder from "../responders/i-fail-responder"
+import IResponder from "../responders/i-responder"
 
 export default class FailHandler {
-  protected responder: IFailResponder
+  protected responder: IResponder
 
-  public constructor(responder: IFailResponder) {
+  public constructor(responder: IResponder) {
     this.responder = responder
   }
 

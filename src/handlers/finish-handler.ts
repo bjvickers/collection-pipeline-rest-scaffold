@@ -1,12 +1,12 @@
 "use strict"
 
 import IContext from "../context/i-context"
-import IFinishResponder from "../responders/i-finish-responder"
+import IResponder from "../responders/i-responder"
 
 export default class FinishHandler {
-  protected responder: IFinishResponder
+  protected responder: IResponder
 
-  public constructor(responder: IFinishResponder) {
+  public constructor(responder: IResponder) {
     this.responder = responder
   }
 
