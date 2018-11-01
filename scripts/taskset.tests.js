@@ -10,6 +10,10 @@ const tasks = new Listr([
     task: () => execa('npm', ['run', 'qc:test:unit'])
   },
   {
+    title: 'Running api tests',
+    task: () => execa('npm', ['run', 'qc:test:api'])
+  },
+  {
     title: 'Running feature tests',
     task: () => execa('npm', ['run', 'qc:test:feature'])
   }
