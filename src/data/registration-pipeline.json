@@ -2,6 +2,7 @@
   "name": "RegistrationPipeline",
   "components": [
     {
+      "desc": "Add registration emails to the context, for later build",
       "type": "AddContextEmails",
       "events": {
         "fail": "AddContextEmailsFailEvent",
@@ -16,6 +17,7 @@
       }
     },
     {
+      "desc": "Transform the User viewmodel into the User domain model",
       "type": "TransformViewModelToDomain",
       "events": {
         "fail": "TransformViewModelToDomainFailEvent",
@@ -30,6 +32,7 @@
       }
     },
     {
+      "desc": "Ensure that the email is not already in the database",
       "type": "EnforceUniqueUserEmail",
       "events": {
         "fail": "EnforceUniqueUserEmailFailEvent",
@@ -44,6 +47,7 @@
       }
     },
     {
+      "desc": "Convert the user's cleartext password to encrypted",
       "type": "TransformUserClearPassword",
       "events": {
         "fail": "TransformUserClearPasswordFailEvent",
@@ -58,6 +62,7 @@
       }
     },
     {
+      "desc": "Save the user to the database",
       "type": "SaveNewUserToDb",
       "events": {
         "fail": "SaveNewUserToDbFailEvent",
@@ -72,6 +77,7 @@
       }
     },
     {
+      "desc": "Build the registration emails",
       "type": "BuildEmailTemplates",
       "events": {
         "fail": "BuildEmailTemplatesFailEvent",
@@ -86,6 +92,7 @@
       }
     },
     {
+      "desc": "Send the registration emails",
       "type": "SendEmails",
       "events": {
         "fail": "SendEmailsFailEvent",

@@ -1,6 +1,6 @@
 "use strict"
 
-import express from "express"
+import IContext from "../context/i-context"
 import IFinishResponder from "../responders/i-finish-responder"
 
 export default class FinishHandler {
@@ -10,7 +10,7 @@ export default class FinishHandler {
     this.responder = responder
   }
 
-  public handle(req: express.Request, res: express.Response): void {
-    this.responder.handle(req, res)
+  public handle(err: any, context: IContext): void {
+    this.responder.handle(err, context)
   }
 }

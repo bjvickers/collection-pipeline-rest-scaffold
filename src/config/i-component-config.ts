@@ -5,6 +5,7 @@ import IHandlerConfig from "./i-handler-config"
 import IResponderConfig from "./i-responder-config"
 
 export default interface IComponentConfig {
+  desc: string
   type: string
   events: IEventConfig
   handlers: IHandlerConfig

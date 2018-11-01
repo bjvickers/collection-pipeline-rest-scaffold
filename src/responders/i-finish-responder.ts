@@ -1,7 +1,7 @@
 "use strict"
 
-import express from "express"
+import IContext from "../context/i-context"
 
 export default interface IFinishResponder {
-  handle(req: express.Request, res: express.Response): void
+  handle(err: any, context: IContext): void
 }

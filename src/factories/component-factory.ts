@@ -1,7 +1,6 @@
 "use strict"
 
 import EventEmitter from "events"
-import express from "express"
 import Component from "../components/component"
 import IComponentConfig from "../config/i-component-config"
 import TYPES from "../ioc/types"
@@ -42,10 +41,10 @@ export default class ComponentFactory {
 
       // Successful execute. Identify the next|finish handler and despatch
       event = joinpoint.target.getNextEvent() || joinpoint.target.getFinishEvent()
-      joinpoint.target.emit(event, joinpoint.args[0], joinpoint.args[1])
+      joinpoint.target.emit(event, null, joinpoint.args[0])
     } catch (err) {
       event = joinpoint.target.getFailEvent()
-      joinpoint.target.emit(event, joinpoint.args[0], joinpoint.args[1], err)
+      joinpoint.target.emit(event, err, joinpoint.args[0])
     }
   }
 }

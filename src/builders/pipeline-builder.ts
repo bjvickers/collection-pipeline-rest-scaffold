@@ -1,9 +1,9 @@
 "use strict"
 
-import express from "express"
 import Component from "../components/component"
 import IComponentConfig from "../config/i-component-config"
 import IPipelineConfig from "../config/i-pipeline-config"
+import IContext from "../context/i-context"
 import ComponentFactory from "../factories/component-factory"
 import FailHandlerFactory from "../factories/fail-handler-factory"
 import FinishHandlerFactory from "../factories/finish-handler-factory"
@@ -50,8 +50,8 @@ export default class PipelineBuilder implements IPipelineBuilder {
 
   protected attachFailHandler(config: IComponentConfig, component: Component): void {
     const handler: FailHandler = this.failHandlerFactory.create(config)
-    component.on(config.events.fail, (req: express.Request, res: express.Response, err: any) => {
-      handler.handle(req, res, err)
+    component.on(config.events.fail, (err: any, context: IContext) => {
+      handler.handle(err, context)
     })
   }
 
@@ -61,8 +61,8 @@ export default class PipelineBuilder implements IPipelineBuilder {
     }
 
     const handler: NextHandler = this.nextHandlerFactory.create(config, pipeline)
-    component.on(config.events.next, (req: express.Request, res: express.Response) => {
-      handler.handle(req, res)
+    component.on(config.events.next, (err: any, context: IContext) => {
+      handler.handle(err, context)
     })
   }
 
@@ -72,8 +72,8 @@ export default class PipelineBuilder implements IPipelineBuilder {
     }
 
     const handler: FinishHandler = this.finishHandlerFactory.create(config)
-    component.on(config.events.finish, (req: express.Request, res: express.Response) => {
-      handler.handle(req, res)
+    component.on(config.events.finish, (err: any, context: IContext) => {
+      handler.handle(err, context)
     })
   }
 }

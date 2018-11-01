@@ -1,8 +1,10 @@
 "use strict"
 
-import express from "express"
+// @TODO: are these necessary here, even though they are included in the
+// @TODO: interface 'i-context' file?
 import Component from "../components/component"
 import IPipelineConfig from "../config/i-pipeline-config"
+import IContext from "../context/i-context"
 import IPipeline from "./i-pipeline"
 
 export default class Pipeline implements IPipeline {
@@ -24,10 +26,10 @@ export default class Pipeline implements IPipeline {
     return this.config
   }
 
-  public next(req: express.Request, res: express.Response): void {
+  public next(context: IContext): void {
     if (this.currentPos === this.components.length) {
       throw new Error()
     }
-    this.components[this.currentPos++].execute(req, res)
+    this.components[this.currentPos++].execute(context)
   }
 }

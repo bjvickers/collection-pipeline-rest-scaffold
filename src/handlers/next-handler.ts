@@ -1,8 +1,9 @@
 "use strict"
 
-import express from "express"
+import IContext from "../context/i-context"
 import IPipeline from "../pipeline/i-pipeline"
 
+// @TODO: implement an IHandler interface
 export default class NextHandler {
   protected pipeline: IPipeline
 
@@ -10,7 +11,7 @@ export default class NextHandler {
     this.pipeline = pipeline
   }
 
-  public handle(req: express.Request, res: express.Response): void {
-    this.pipeline.next(req, res)
+  public handle(err: any, context: IContext): void {
+    this.pipeline.next(context)
   }
 }

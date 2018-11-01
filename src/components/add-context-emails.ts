@@ -1,7 +1,7 @@
 "use strict"
 
-import express from "express"
 import IComponentConfig from "../config/i-component-config"
+import IContext from "../context/i-context"
 import { domainLogger } from "../lib/log/logger"
 import Component from "./component"
 
@@ -19,7 +19,7 @@ export default class AddContextEmails extends Component {
    * onFail: FailHandler
    * oonNext: NextHandler
   */
-  public execute(req: express.Request, res: express.Response): void {
+  public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })
     return
   }
