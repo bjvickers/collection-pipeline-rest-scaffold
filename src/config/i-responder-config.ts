@@ -2,5 +2,5 @@
 
 export default interface IResponderConfig {
   fail: string
-  finish: string
+  success: string
 }

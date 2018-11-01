@@ -6,11 +6,11 @@
       "type": "AddContextEmails",
       "events": {
         "fail": "AddContextEmailsFailEvent",
-        "next": "AddContextEmailsNextEvent"
+        "success": "AddContextEmailsNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder500"
@@ -21,11 +21,11 @@
       "type": "TransformViewModelToDomain",
       "events": {
         "fail": "TransformViewModelToDomainFailEvent",
-        "next": "TransformViewModelToDomainNextEvent"
+        "success": "TransformViewModelToDomainNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder500"
@@ -36,11 +36,11 @@
       "type": "EnforceUniqueUserEmail",
       "events": {
         "fail": "EnforceUniqueUserEmailFailEvent",
-        "next": "EnforceUniqueUserEmailNextEvent"
+        "success": "EnforceUniqueUserEmailNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder409"
@@ -51,11 +51,11 @@
       "type": "TransformUserClearPassword",
       "events": {
         "fail": "TransformUserClearPasswordFailEvent",
-        "next": "TransformUserClearPasswordNextEvent"
+        "success": "TransformUserClearPasswordNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder500"
@@ -66,11 +66,11 @@
       "type": "SaveNewUserToDb",
       "events": {
         "fail": "SaveNewUserToDbFailEvent",
-        "next": "SaveNewUserToDbNextEvent"
+        "success": "SaveNewUserToDbNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder500"
@@ -81,11 +81,11 @@
       "type": "BuildEmailTemplates",
       "events": {
         "fail": "BuildEmailTemplatesFailEvent",
-        "next": "BuildEmailTemplatesNextEvent"
+        "success": "BuildEmailTemplatesNextEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "next": "NextHandler"
+        "fail": "ResponseHandler",
+        "success": "NextHandler"
       },
       "responders": {
         "fail": "Responder500"
@@ -96,15 +96,15 @@
       "type": "SendEmails",
       "events": {
         "fail": "SendEmailsFailEvent",
-        "finish": "SendEmailsFinishEvent"
+        "success": "SendEmailsFinishEvent"
       },
       "handlers": {
-        "fail": "FailHandler",
-        "finish": "FinishHandler"
+        "fail": "ResponseHandler",
+        "success": "ResponseHandler"
       },
       "responders": {
         "fail": "Responder500",
-        "finish": "Responder201"
+        "success": "Responder201"
       }
     }
   ]

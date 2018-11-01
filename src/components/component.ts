@@ -18,11 +18,7 @@ export default abstract class Component extends EventEmitter {
     return this.config.events.fail
   }
 
-  public getNextEvent(): string {
-    return this.config.events.next
-  }
-
-  public getFinishEvent(): string {
-    return this.config.events.finish
+  public getSuccessEvent(): string {
+    return this.config.events.success
   }
 }

@@ -2,8 +2,9 @@
 
 import IContext from "../context/i-context"
 import IResponder from "../responders/i-responder"
+import IHandler from "./i-handler"
 
-export default class FinishHandler {
+export default class ResponseHandler implements IHandler {
   protected responder: IResponder
 
   public constructor(responder: IResponder) {

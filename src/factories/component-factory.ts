@@ -34,17 +34,15 @@ export default class ComponentFactory {
    * component.execute() success or failure.
    */
   protected addHandlerDespatchAspect(joinpoint: any): void {
-    let event: string
     try {
       // Execute the component: component.execute(req, res)
       joinpoint.proceed()
 
-      // Successful execute. Identify the next|finish handler and despatch
-      event = joinpoint.target.getNextEvent() || joinpoint.target.getFinishEvent()
-      joinpoint.target.emit(event, null, joinpoint.args[0])
+      // Successful execute.
+      joinpoint.target.emit(joinpoint.target.getSuccessEvent(), null, joinpoint.args[0])
     } catch (err) {
-      event = joinpoint.target.getFailEvent()
-      joinpoint.target.emit(event, err, joinpoint.args[0])
+      // Failed execute.
+      joinpoint.target.emit(joinpoint.target.getFailEvent(), err, joinpoint.args[0])
     }
   }
 }

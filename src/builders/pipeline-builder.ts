@@ -5,13 +5,11 @@ import IComponentConfig from "../config/i-component-config"
 import IPipelineConfig from "../config/i-pipeline-config"
 import IContext from "../context/i-context"
 import ComponentFactory from "../factories/component-factory"
-import FailHandlerFactory from "../factories/fail-handler-factory"
-import FinishHandlerFactory from "../factories/finish-handler-factory"
 import NextHandlerFactory from "../factories/next-handler-factory"
 import PipelineFactory from "../factories/pipeline-factory"
-import FailHandler from "../handlers/fail-handler"
-import FinishHandler from "../handlers/finish-handler"
+import ResponseHandlerFactory from "../factories/response-handler-factory"
 import NextHandler from "../handlers/next-handler"
+import ResponseHandler from "../handlers/response-handler"
 import TYPES from "../ioc/types"
 import IPipeline from "../pipeline/i-pipeline"
 import IPipelineBuilder from "./i-pipeline-builder"
@@ -19,17 +17,15 @@ import IPipelineBuilder from "./i-pipeline-builder"
 export default class PipelineBuilder implements IPipelineBuilder {
   protected pipelineFactory: PipelineFactory
   protected componentFactory: ComponentFactory
-  protected failHandlerFactory: FailHandlerFactory
   protected nextHandlerFactory: NextHandlerFactory
-  protected finishHandlerFactory: FinishHandlerFactory
+  protected responseHandlerFactory: ResponseHandlerFactory
   protected pipeline: IPipeline
 
   public constructor(inject: any) {
     this.pipelineFactory = inject[TYPES.PipelineFactory]
     this.componentFactory = inject[TYPES.ComponentFactory]
-    this.failHandlerFactory = inject[TYPES.FailHandlerFactory]
     this.nextHandlerFactory = inject[TYPES.NextHandlerFactory]
-    this.finishHandlerFactory = inject[TYPES.FinishHandlerFactory]
+    this.responseHandlerFactory = inject[TYPES.ResponseHandlerFactory]
   }
 
   public create(config: IPipelineConfig): void {
@@ -39,8 +35,7 @@ export default class PipelineBuilder implements IPipelineBuilder {
   public addComponent(config: IComponentConfig): void {
     const component: Component = this.componentFactory.create(config)
     this.attachFailHandler(config, component)
-    this.attachNextHandler(config, component, this.pipeline)
-    this.attachFinishHandler(config, component)
+    this.attachSuccessHandler(config, component, this.pipeline)
     this.pipeline.add(component)
   }
 
@@ -49,30 +44,24 @@ export default class PipelineBuilder implements IPipelineBuilder {
   }
 
   protected attachFailHandler(config: IComponentConfig, component: Component): void {
-    const handler: FailHandler = this.failHandlerFactory.create(config)
+    const handler: ResponseHandler = this.responseHandlerFactory.create(config.handlers.fail, config.responders.fail)
     component.on(config.events.fail, (err: any, context: IContext) => {
       handler.handle(err, context)
     })
   }
 
-  protected attachNextHandler(config: IComponentConfig, component: Component, pipeline: IPipeline): void {
-    if (!config.events.next) {
+  protected attachSuccessHandler(config: IComponentConfig, component: Component, pipeline: IPipeline): void {
+    if (config.handlers.success === "NextHandler") {
+      const nextHandler: NextHandler = this.nextHandlerFactory.create(config, pipeline)
+      component.on(config.events.success, (err: any, context: IContext) => {
+        nextHandler.handle(err, context)
+      })
       return
     }
 
-    const handler: NextHandler = this.nextHandlerFactory.create(config, pipeline)
-    component.on(config.events.next, (err: any, context: IContext) => {
-      handler.handle(err, context)
-    })
-  }
-
-  protected attachFinishHandler(config: IComponentConfig, component: Component): void {
-    if (!config.events.finish) {
-      return
-    }
-
-    const handler: FinishHandler = this.finishHandlerFactory.create(config)
-    component.on(config.events.finish, (err: any, context: IContext) => {
+    const handler: ResponseHandler =
+      this.responseHandlerFactory.create(config.handlers.success, config.responders.success)
+    component.on(config.events.success, (err: any, context: IContext) => {
       handler.handle(err, context)
     })
   }

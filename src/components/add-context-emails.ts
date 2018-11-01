@@ -14,10 +14,6 @@ export default class AddContextEmails extends Component {
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
    * Attaches email templates used by the pipeline
-   *
-   * out: context.emails
-   * onFail: FailHandler
-   * oonNext: NextHandler
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })

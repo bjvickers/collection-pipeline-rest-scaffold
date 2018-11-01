@@ -2,9 +2,9 @@
 
 import IContext from "../context/i-context"
 import IPipeline from "../pipeline/i-pipeline"
+import IHandler from "./i-handler"
 
-// @TODO: implement an IHandler interface
-export default class NextHandler {
+export default class NextHandler implements IHandler {
   protected pipeline: IPipeline
 
   public constructor(pipeline: IPipeline) {

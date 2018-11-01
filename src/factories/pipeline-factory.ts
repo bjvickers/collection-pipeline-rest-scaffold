@@ -12,8 +12,7 @@ export default class PipelineFactory {
   }
 
   public create(config: IPipelineConfig): IPipeline {
-    const factory: { create: (config: IPipelineConfig) => IPipeline } =
-      this.inject[TYPES.IPipeline]
+    const factory: { create: (config: IPipelineConfig) => IPipeline } = this.inject[TYPES.IPipeline]
     return factory.create(config)
   }
 }

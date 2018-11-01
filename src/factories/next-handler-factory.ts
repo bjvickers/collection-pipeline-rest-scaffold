@@ -12,8 +12,7 @@ export default class NextHandlerFactory {
   }
 
   public create(config: IComponentConfig, pipeline: IPipeline): NextHandler {
-    const factory: { create: (pipeline: IPipeline) => NextHandler } =
-      this.inject[config.handlers.next]
+    const factory: { create: (pipeline: IPipeline) => NextHandler } = this.inject[config.handlers.success]
     return factory.create(pipeline)
   }
 }
