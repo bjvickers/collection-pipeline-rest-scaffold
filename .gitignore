@@ -4,5 +4,4 @@ dist
 logs
 *.log
 *.swp
-.npmrc
 reports
