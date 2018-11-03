@@ -5,7 +5,7 @@ import express from "express"
 import helmet from "helmet"
 import path from "path"
 import middleware from "swagger-express-middleware"
-import TYPES from "../../ioc/types"
+import TYPES from "../../bin/ioc/types"
 import RegistrationController from "../controllers/registration-controller"
 
 const app: express.Application = express()

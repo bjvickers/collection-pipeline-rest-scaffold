@@ -1,7 +1,7 @@
 "use strict"
 
 import http from "http"
-import TYPES from "../../ioc/types"
+import TYPES from "../../bin/ioc/types"
 import Application from "../application/application"
 
 export default class Server {

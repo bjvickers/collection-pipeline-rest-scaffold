@@ -1,10 +1,10 @@
 "use strict"
 
 import * as awilix from "awilix"
-import NextHandler from "../handlers/next-handler"
-import ResponseHandler from "../handlers/response-handler"
-import IPipeline from "../pipeline/i-pipeline"
-import IResponder from "../responders/i-responder"
+import NextHandler from "../../handlers/next-handler"
+import ResponseHandler from "../../handlers/response-handler"
+import IPipeline from "../../pipeline/i-pipeline"
+import IResponder from "../../responders/i-responder"
 import TYPES from "./types"
 
 export default function() {

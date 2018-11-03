@@ -1,7 +1,7 @@
 "use strict"
 
 import * as awilix from "awilix"
-import Server from "../api/server/server"
+import Server from "../../api/server/server"
 import TYPES from "./types"
 
 export default function() {

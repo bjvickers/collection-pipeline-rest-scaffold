@@ -1,8 +1,8 @@
 "use strict"
 
+import IPipeline from "../../pipeline/i-pipeline"
+import IPipelineConfig from "../../schema/config/i-pipeline-config"
 import TYPES from "../ioc/types"
-import IPipeline from "../pipeline/i-pipeline"
-import IPipelineConfig from "../schema/config/i-pipeline-config"
 
 export default class PipelineFactory {
   protected inject: any

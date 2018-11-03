@@ -1,8 +1,8 @@
 "use strict"
 
 import express from "express"
-import IPipelineBuildDirector from "../../builders/i-pipeline-build-director"
-import TYPES from "../../ioc/types"
+import IPipelineBuildDirector from "../../bin/builders/i-pipeline-build-director"
+import TYPES from "../../bin/ioc/types"
 import IPipelineConfig from "../../schema/config/i-pipeline-config"
 import IContext from "../../schema/context/i-context"
 

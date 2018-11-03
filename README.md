@@ -14,7 +14,7 @@ Experimental application using a collection pipeline architecture to implement
 endpoints in a RESTful application.
 
 For every endpoint exposed by the API, an 'src/config/(endpoint)-pipeline.json'
-should be created. This details the sequence of components(tasks) (src/components) 
+should be created. This details the sequence of components/tasks (src/components)
 that are necessary to implement the endpoint.
 
 Pre-pipeline program flow is as follows:

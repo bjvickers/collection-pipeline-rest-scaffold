@@ -5,8 +5,8 @@ import { expect } from "chai"
 import request = require('supertest')
 
 import Application from "../../src/api/application/application"
-import container from "../../src/ioc/compose-root"
-import TYPES from "../../src/ioc/types"
+import container from "../../src/bin/ioc/compose-root"
+import TYPES from "../../src/bin/ioc/types"
 
 const application: Application = container().resolve(TYPES.Application)
 
