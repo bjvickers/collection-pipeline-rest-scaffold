@@ -2,7 +2,7 @@
 
 import * as awilix from "awilix"
 import Pipeline from "../../pipeline/pipeline"
-import IPipelineConfig from "../../schema/config/i-pipeline-config"
+import IPipelineConfig from "../../pipeline/schema/config/i-pipeline-config"
 import TYPES from "./types"
 
 export default function() {

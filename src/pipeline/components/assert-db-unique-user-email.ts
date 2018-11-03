@@ -1,11 +1,11 @@
 "use strict"
 
-import { domainLogger } from "../lib/log/logger"
+import { domainLogger } from "../../lib/log/logger"
 import IComponentConfig from "../schema/config/i-component-config"
 import IContext from "../schema/context/i-context"
 import Component from "./component"
 
-export default class BuildDbQueryFromContext extends Component {
+export default class AssertDbUniqueUserEmail extends Component {
   public constructor(config: IComponentConfig) {
     super(config)
   }
@@ -13,10 +13,8 @@ export default class BuildDbQueryFromContext extends Component {
   /*
    * @TODO: implement method behaviour
    * @TODO: implement @Log()
-   * Builds a db query from paramters given in the Context. Adds query
-   * to context
-   *
-   * Refer to: https://github.com/diegohaz/schm/tree/master/packages/schm-mongo
+   * Tests to ensure that the context.models.db.user email is
+   * unique in the database.
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })

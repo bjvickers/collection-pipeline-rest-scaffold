@@ -3,8 +3,8 @@
 import express from "express"
 import IPipelineBuildDirector from "../../bin/builders/i-pipeline-build-director"
 import TYPES from "../../bin/ioc/types"
-import IPipelineConfig from "../../schema/config/i-pipeline-config"
-import IContext from "../../schema/context/i-context"
+import IPipelineConfig from "../../pipeline/schema/config/i-pipeline-config"
+import IContext from "../../pipeline/schema/context/i-context"
 
 export default class RegistrationController {
   protected pipelineBuildDirector: IPipelineBuildDirector

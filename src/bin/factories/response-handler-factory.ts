@@ -1,7 +1,7 @@
 "use strict"
 
-import ResponseHandler from "../../handlers/response-handler"
-import IResponder from "../../responders/i-responder"
+import ResponseHandler from "../../pipeline/handlers/response-handler"
+import IResponder from "../../pipeline/responders/i-responder"
 
 export default class ResponseHandlerFactory {
   protected inject: any

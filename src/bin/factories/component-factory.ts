@@ -1,7 +1,7 @@
 "use strict"
 
-import Component from "../../components/component"
-import IComponentConfig from "../../schema/config/i-component-config"
+import Component from "../../pipeline/components/component"
+import IComponentConfig from "../../pipeline/schema/config/i-component-config"
 
 export default class ComponentFactory {
   protected inject: any

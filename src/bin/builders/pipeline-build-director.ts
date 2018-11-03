@@ -1,7 +1,7 @@
 "use strict"
 
 import IPipeline from "../../pipeline/i-pipeline"
-import IPipelineConfig from "../../schema/config/i-pipeline-config"
+import IPipelineConfig from "../../pipeline/schema/config/i-pipeline-config"
 import TYPES from "../ioc/types"
 import IPipelineBuildDirector from "./i-pipeline-build-director"
 import IPipelineBuilder from "./i-pipeline-builder"

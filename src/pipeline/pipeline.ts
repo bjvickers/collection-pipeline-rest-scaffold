@@ -1,9 +1,9 @@
 "use strict"
 
-import Component from "../components/component"
-import IPipelineConfig from "../schema/config/i-pipeline-config"
-import IContext from "../schema/context/i-context"
+import Component from "./components/component"
 import IPipeline from "./i-pipeline"
+import IPipelineConfig from "./schema/config/i-pipeline-config"
+import IContext from "./schema/context/i-context"
 
 export default class Pipeline implements IPipeline {
   protected config: IPipelineConfig

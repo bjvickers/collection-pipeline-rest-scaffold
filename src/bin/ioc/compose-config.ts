@@ -1,7 +1,7 @@
 "use strict"
 
 import * as awilix from "awilix"
-import registrationPipeline from "../../config/registration-pipeline.json"
+import registrationPipeline from "../../pipeline/config/registration-pipeline.json"
 import TYPES from "./types"
 
 export default function() {
