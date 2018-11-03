@@ -23,10 +23,10 @@
     }
   },
   "scripts": {
-    "build": "npm run build:transpile && npm run build:copy-static-assets",
+    "build": "npm run --silent build:transpile && npm run --silent build:copy-static-assets",
     "build:transpile": "node ./scripts/task.transpile.js",
     "build:copy-static-assets": "node ./scripts/task.copy-static-assets.js",
-    "qc": "npm run qc:check && npm run qc:test && npm run qc:report",
+    "qc": "npm run --silent qc:check && npm run --silent qc:test && npm run --silent qc:report",
     "qc:check": "node ./scripts/taskset.checks.js",
     "qc:check:code-style": "tslint --config tslint.json \"src/**/*.ts\"",
     "qc:check:credential-leaks": "check-for-leaks .",
