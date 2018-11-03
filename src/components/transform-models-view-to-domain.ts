@@ -10,9 +10,6 @@ export default class TransformModelsViewToDomain extends Component {
     super(config)
   }
 
-  /*
-   * Refer to: https://github.com/diegohaz/schm
-  */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })
     return

@@ -4,6 +4,10 @@ import IResponder from "../responders/i-responder"
 import IContext from "../schema/context/i-context"
 import IHandler from "./i-handler"
 
+/**
+ * Triggers a response to the client after successful/failed pipeline
+ * execution.
+ */
 export default class ResponseHandler implements IHandler {
   protected responder: IResponder
 
