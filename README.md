@@ -1,5 +1,7 @@
 # NodeJS Collection Pipeline REST Scaffold
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/collection-pipeline-rest-scaffold.svg)](https://greenkeeper.io/)
+
 ## Install
 ```
 $ mkdir -vp scaffold  
