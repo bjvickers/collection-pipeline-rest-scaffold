@@ -62,7 +62,7 @@ export default class Application {
 
   protected addRoutes(): void {
     // @TODO: Implement recaptcha verification as a middleware on the relevant route
-    app.use("/api/v1/user", this.controller.createRouter())
+    app.use("/api/v1/register", this.controller.createRouter())
   }
 
   protected addErrorFailover(): void {

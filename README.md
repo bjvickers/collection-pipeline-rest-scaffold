@@ -10,23 +10,36 @@ $ npm run build && npm run qc
 ```
 
 ## Synopsis
-Experimental application using a component (or task) pipeline architecture.
-For every endpoint exposed by the API, an 'src/config/(endpoint)-pipeline.json'
-should be created. This details the sequence of components (src/components) that are 
-necessary to implement the endpoint.
+Experimental application using a collection pipeline architecture to implement
+endpoints in a RESTful application.
 
-Program flow is as follows:
+For every endpoint exposed by the API, an 'src/config/(endpoint)-pipeline.json'
+should be created. This details the sequence of components(tasks) (src/components) 
+that are necessary to implement the endpoint.
+
+Pre-pipeline program flow is as follows:
 * Client makes a request of the API endpoint
-* Middlewares are executed in sequence, as normal
+* Middlewares are executed in sequence
 * The controller takes receipt of the request
 * The controller transforms the request into a context object that will be
 used by the pipeline components
-* The controller then triggers the pipeline workflow
+
+Pipeline program flow then follows:
+* The controller triggers the pipeline workflow
+* The first/next component in the pipeline executes its task
+* On completion, the despatcher (src/aspects/despatchable) triggers
+the 'success handler' attached to the component, which will in turn
+either call the next component in the pipeline, or send a 'success' response
+to the client, indicating successful completion of the pipeline
+* On error, the despatcher will trigger the 'fail handler' attached
+to the component, which will send a fail response to the client.
 
 The components described by the pipeline.json are executed in the sequence
-they are declarted. They are orthogonal, and do exactly one thing. 
+they are declared. They are orthogonal, and do exactly one thing. 
 They concern themselves with only the 'happy path' of execution, and 
-delegate any errors to the failover management provided by aspects (src/aspect).
+delegate any errors to the failover management provided by the despatcher
+(src/aspect/despatchable). The despatcher is an 'aspect', and is attached
+to the component in the component constructor.
 
 Individual component workflow is as follows:
 * Receive the injected context object
@@ -34,10 +47,7 @@ Individual component workflow is as follows:
 * Execute business logic
 * Write output to the context object
 
-To get an idea of program operation, start the application (`npm run start:reload`),
-then open a second tab and run the api tests (`npm run qc:test:api`). After
-the test has run, refer to the application tab to see logging from each
-of the components in the pipleline.
+To get an idea of program operation, run the test: `npm run qc:test:feature`
 
 
 ## Local
@@ -71,5 +81,3 @@ $ npm run qc:test
 ```
 $ npm start   
 ```
-The scaffold uses pm2 to ensure continuous operation in the event of shutdown, 
-and clustering, to maximise performance.

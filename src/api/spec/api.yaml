@@ -23,12 +23,12 @@ tags:
     description: Find out more about our store
     url: http://swagger.io
 paths:
-  /user:
+  /register:
     post:
       tags:
       - user
       summary: Create user
-      description: This can only be done by the logged in user.
+      description: This can only be done a non-logged-in user.
       operationId: createUser
       parameters:
       - in: body
