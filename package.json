@@ -30,7 +30,7 @@
     "qc:check": "node ./scripts/taskset.checks.js",
     "qc:check:code-style": "tslint --config tslint.json \"src/**/*.ts\"",
     "qc:check:credential-leaks": "check-for-leaks .",
-    "qc:check:unused-packages": "depcheck . --ignore-dirs=dist,node_modules --ignores=\"@commitlint/*,@types/*,husky,nodemon,tslint-config-security,reflect-metadata,ts-node,pm2\"",
+    "qc:check:unused-packages": "depcheck . --ignore-dirs=dist,node_modules --ignores=\"@commitlint/*,@types/*,husky,nodemon,tslint-config-security,reflect-metadata,ts-node,chai\"",
     "qc:test": "node ./scripts/taskset.tests.js",
     "qc:test:unit": "echo 'no unit tests yet' && exit 0",
     "qc:test:api": "ts-mocha ./test/api/*.ts",
