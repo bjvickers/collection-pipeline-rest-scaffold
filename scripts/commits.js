@@ -1,9 +1,7 @@
-"use strict"
-
-const displayTaskError = require('./notice.taskerror.js')
+const error = require("./error.js")
 
 let message = "Please format git commits correctly.\n"
 message += "Style guide here: https://www.conventionalcommits.org"
 
-displayTaskError(message)
+error(message)
 process.exit(1)

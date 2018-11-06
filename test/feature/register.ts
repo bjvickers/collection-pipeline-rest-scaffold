@@ -4,9 +4,9 @@ import "mocha"
 import { expect } from "chai"
 import request = require('supertest')
 
-import Application from "../../src/api/application/application"
 import container from "../../src/bin/ioc/compose-root"
 import TYPES from "../../src/bin/ioc/types"
+import Application from "../../src/api/application/application"
 
 const application: Application = container().resolve(TYPES.Application)
 

@@ -6,4 +6,5 @@ logs
 *.swp
 reports
 .npmrc
-
+*.map
+src/**/*.js

@@ -21,7 +21,6 @@
     "resolveJsonModule": true,
 		"moduleResolution": "node",
 		"sourceMap": true,
-		"outDir": "dist",
 		"baseUrl": ".",
 		"paths": {
 			"*": [

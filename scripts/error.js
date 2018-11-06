@@ -1,5 +1,3 @@
-"use strict"
-
 module.exports = (message) => {
   console.log("=================")
   console.log()
