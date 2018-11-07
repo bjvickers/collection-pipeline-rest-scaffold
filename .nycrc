@@ -1,0 +1,14 @@
+{
+  "include": [
+    "src/*.js",
+    "src/**/*.js"
+  ],
+  "extension": [
+    ".js"
+  ],
+  "reporter": [
+    "html"
+  ],
+  "all": true,
+  "report-dir": "./reports/coverage"
+}
