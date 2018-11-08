@@ -13,8 +13,10 @@ src/**/*.js
 reports/coverage/*
 reports/complexity/*
 reports/reminders/*
+reports/flamegraph/*
 
 # Add gitkeeps, to preserve the report folder structure
 !reports/coverage/.gitkeep
 !reports/complexity/.gitkeep
 !reports/reminders/.gitkeep
+!reports/flamegraph/api-v1-register/.gitkeep
