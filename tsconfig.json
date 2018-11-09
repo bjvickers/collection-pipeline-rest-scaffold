@@ -21,7 +21,6 @@
     "resolveJsonModule": true,
 		"moduleResolution": "node",
 		"sourceMap": true,
-		"outDir": "dist",
 		"baseUrl": ".",
 		"paths": {
 			"*": [
@@ -33,6 +32,7 @@
 		"emitDecoratorMetadata": true
 	},
 	"include": [
-		"src/**/*"
+		"src/**/*",
+    "test/**/*"
 	]
 }

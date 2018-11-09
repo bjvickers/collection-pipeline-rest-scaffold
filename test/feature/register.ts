@@ -1,34 +1,32 @@
-"use strict"
-
-import "mocha"
 import { expect } from "chai"
-import request = require('supertest')
+import "mocha"
+import request = require("supertest")
 
-import Application from "../../src/api/application/application"
+import IApplication from "../../src/api/application/i-application"
 import container from "../../src/bin/ioc/compose-root"
 import TYPES from "../../src/bin/ioc/types"
 
-const application: Application = container().resolve(TYPES.Application)
+const application: IApplication = container().resolve(TYPES.IApplication)
 
-describe('User Registration', function() {
-  describe('New user can register when providing valid values for all required fields', function() {
-    it('should respond default for "successful operation"', function(done) {
-      
-      const registerSchema = { 
-        "firstName": "test",
-        "lastName": "test",
-        "email": "test@test.com",
-        "password": "123456"
+describe("User Registration", () => {
+  describe("New user can register when providing valid values for all required fields", () => {
+    it('should respond default for "successful operation"', (done) => {
+
+      const registerSchema = {
+        email: "test@test.com",
+        firstName: "test",
+        lastName: "test",
+        password: "123456"
       }
-      
+
       request(application.getRequestListener())
         .post("/api/v1/register")
         .send(registerSchema)
         .set("Content-Type", "application/json")
         .set("Accept", "application/json")
         .expect(200)
-        .end(function(err, res) {
-          if (err) return done(err)
+        .end((err, res) => {
+          if (err) { return done(err) }
           done()
         })
     })

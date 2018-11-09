@@ -6,15 +6,16 @@ import helmet from "helmet"
 import path from "path"
 import middleware from "swagger-express-middleware"
 import TYPES from "../../bin/ioc/types"
-import RegistrationController from "../controllers/registration-controller"
+import IRegistrationController from "../controllers/i-registration-controller"
+import IApplication from "./i-application"
 
 const app: express.Application = express()
 
-export default class Application {
-  protected controller: RegistrationController
+export default class Application implements IApplication {
+  protected controller: IRegistrationController
 
   public constructor(inject: any) {
-    this.controller = inject[TYPES.RegistrationController]
+    this.controller = inject[TYPES.IRegistrationController]
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))

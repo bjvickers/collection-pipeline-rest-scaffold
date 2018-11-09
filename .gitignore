@@ -4,6 +4,19 @@ dist
 logs
 *.log
 *.swp
-reports
 .npmrc
+*.map
+src/**/*.js
+.nyc_output
 
+# Initially exclude everything in reports
+reports/coverage/*
+reports/complexity/*
+reports/reminders/*
+reports/flamegraph/*
+
+# Add gitkeeps, to preserve the report folder structure
+!reports/coverage/.gitkeep
+!reports/complexity/.gitkeep
+!reports/reminders/.gitkeep
+!reports/flamegraph/api-v1-register/.gitkeep

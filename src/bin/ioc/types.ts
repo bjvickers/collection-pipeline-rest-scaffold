@@ -1,5 +1,3 @@
-"use strict"
-
 // @TODO: Split out TYPES into modules, e.g:
 // @TODO: COMPONENTS.<etc>, HANDLERS.<etc>, FACTORIES.<etc>
 const TYPES = {
@@ -9,15 +7,18 @@ const TYPES = {
   BuildDbQueryFromContext: "BuildDbQueryFromContext",
   BuildEmailTemplates: "BuildEmailTemplates",
   ComponentFactory: "ComponentFactory",
+  IApplication: "IApplication",
   IPipeline: "IPipeline",
   IPipelineBuildDirector: "IPipelineBuildDirector",
   IPipelineBuilder: "IPipelineBuilder",
+  IRegistrationController: "IRegistrationController",
+  IServer: "IServer",
   NextHandler: "NextHandler",
   NextHandlerFactory: "NextHandlerFactory",
   PersistNewDbModel: "PersistNewDbModel",
   PipelineFactory: "PipelineFactory",
-  RegistrationController: "RegistrationController",
   RegistrationPipeline: "RegistrationPipeline",
+  RegistrationTransformer: "RegistrationTransformer",
   Responder200: "Responder200",
   Responder201: "Responder201",
   Responder400: "Responder400",
