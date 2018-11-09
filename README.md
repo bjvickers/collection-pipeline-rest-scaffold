@@ -1,13 +1,6 @@
 # NodeJS Collection Pipeline REST Scaffold
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-## Install
-```
-$ mkdir -vp scaffold  
-$ cd scaffold  
-$ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
-$ npm i  
-$ npm run build && npm run qc  
-```
 
 ## Synopsis
 Experimental application using a collection pipeline architecture to implement
@@ -50,6 +43,15 @@ Individual component workflow is as follows:
 To get an idea of program operation, run the test: `npm run test:feature`
 
 
+## Install
+```
+$ mkdir -vp project  
+$ cd project  
+$ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
+$ npm i  
+$ npm run build && npm run qc  
+```
+
 ## Local
 ### Run
 ```
@@ -57,7 +59,6 @@ $ npm run start:reload
 ```
 This will run the app whilst monitoring any changes to the Typescript files.
 Changes will be automatically transpiled and the application will automatically reload.
-
 
 ### Debug
 ```
@@ -69,10 +70,9 @@ made to the Typescript files.
 Note that this is configured for remote debugging (for local debugging,
 change the IP address from 0.0.0.0 to 127.0.0.1).
 
-
 ### Test
 ```
-$ npm test  
+$ npm t  
 ```
 
 
