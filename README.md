@@ -2,6 +2,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/collection-pipeline-rest-scaffold.svg)](https://greenkeeper.io/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold?ref=badge_shield)
+[![Known Vulnerabilities](https://snyk.io/test/github/bjvickers/collection-pipeline-rest-scaffold/badge.svg)](https://snyk.io/test/github/bjvickers/collection-pipeline-rest-scaffold)
 
 ## Synopsis
 Experimental application using a collection pipeline architecture to implement
