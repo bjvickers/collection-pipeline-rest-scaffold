@@ -1,6 +1,6 @@
 # NodeJS Collection Pipeline REST Scaffold
+[![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/collection-pipeline-rest-scaffold.svg)](https://greenkeeper.io/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-
 
 ## Synopsis
 Experimental application using a collection pipeline architecture to implement
