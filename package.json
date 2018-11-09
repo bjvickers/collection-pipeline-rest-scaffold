@@ -19,12 +19,12 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint --quiet -E HUSKY_GIT_PARAMS || (node ./scripts/notice.commits.js && exit 1)",
-      "pre-push": "npm run build && npm run qc"
+      "pre-push": "npm run build && npm run check && npm t"
     }
   },
   "scripts": {
     "build": "tsc",
-    "qc": "npm run check && npm run test && npm run report",
+    "qc": "npm run check && npm t && npm run report",
     "check": "npm run check:code-style && npm run check:credential-leaks && npm run check:unused-packages",
     "check:code-style": "tslint --config tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
     "check:credential-leaks": "check-for-leaks .",
@@ -40,6 +40,7 @@
     "start:reload": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./src/bin/start.js\"",
     "start:debug": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect=0.0.0.0:9229 ./src/bin/start.js\"",
     "start": "node ./src/bin/start.js -i \"max\" -- --production",
+    "release": "standard-version",
     "fix-code-style": "tslint --fix --config tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
     "watch-ts": "tsc -w"
   },
@@ -82,6 +83,7 @@
     "nyc": "^13.1.0",
     "plato": "^1.7.0",
     "shelljs": "^0.8.2",
+    "standard-version": "^4.4.0",
     "supertest": "^3.3.0",
     "ts-mocha": "^2.0.0",
     "ts-node": "^7.0.1",
