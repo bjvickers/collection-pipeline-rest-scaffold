@@ -1,8 +1,8 @@
 const chalk = require("chalk")
 const shell = require("shelljs")
-const notice = require("./error.js")
+const notice = require("./notice.js")
 
-let message = "Building reminders (@TODO/@FIXME) report: "
+let message = "Building reminders (@TODO/@FIXME) report\n"
 message += chalk.yellow("./reports/reminders/index.html")
 notice(message)
 

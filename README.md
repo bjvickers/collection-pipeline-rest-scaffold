@@ -5,7 +5,7 @@
 $ mkdir -vp scaffold  
 $ cd scaffold  
 $ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
-$ npm install  
+$ npm i  
 $ npm run build && npm run qc  
 ```
 

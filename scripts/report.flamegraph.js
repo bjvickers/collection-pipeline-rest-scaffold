@@ -1,9 +1,9 @@
 const chalk = require("chalk")
 const shell = require("shelljs")
-const notice = require("./error.js")
+const notice = require("./notice.js")
 
-let message = "Building flame-graph report for endpoint /api/v1/register: "
-message += chalk.yellow("./reports/flame/api-v1-register/index.html")
+let message = "Building flame-graph report for /api/v1/register\n"
+message += chalk.yellow("./reports/flamegraph/api-v1-register/index.html")
 notice(message)
 
 shell.rm("-rf", "./reports/flamegraph/api-v1-register/*")
