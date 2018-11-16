@@ -6,4 +6,5 @@ import express from "express"
 export default interface IApi {
   incoming: express.Request
   outgoing: express.Response
+  result: any
 }

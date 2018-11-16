@@ -6,16 +6,20 @@ import helmet from "helmet"
 import path from "path"
 import middleware from "swagger-express-middleware"
 import TYPES from "../../bin/ioc/types"
+import IHelloWorldController from "../controllers/i-hello-world-controller"
 import IRegistrationController from "../controllers/i-registration-controller"
 import IApplication from "./i-application"
 
 const app: express.Application = express()
 
 export default class Application implements IApplication {
-  protected controller: IRegistrationController
+  protected registrationController: IRegistrationController
+  protected helloWorldController: IHelloWorldController
 
   public constructor(inject: any) {
-    this.controller = inject[TYPES.IRegistrationController]
+    this.registrationController = inject[TYPES.IRegistrationController]
+    this.helloWorldController = inject[TYPES.IHelloWorldController]
+
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
@@ -63,7 +67,8 @@ export default class Application implements IApplication {
 
   protected addRoutes(): void {
     // @TODO: Implement recaptcha verification as a middleware on the relevant route
-    app.use("/api/v1/register", this.controller.createRouter())
+    app.use("/api/v1/register", this.registrationController.createRouter())
+    app.use("/api/v1/hello-world", this.helloWorldController.createRouter())
   }
 
   protected addErrorFailover(): void {

@@ -46,7 +46,7 @@ To get an idea of program operation, run the test: `npm run test:feature`
 
 
 ## Install
-```
+```console
 $ mkdir -vp project  
 $ cd project  
 $ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
@@ -56,14 +56,14 @@ $ npm run build && npm run qc
 
 ## Local
 ### Run
-```
+```console
 $ npm run start:reload  
 ```
 This will run the app whilst monitoring any changes to the Typescript files.
 Changes will be automatically transpiled and the application will automatically reload.
 
 ### Debug
-```
+```console
 $ npm run start:debug  
 ```
 As with `start:reload`, auto-compilation and reload will occur on any changes
@@ -73,14 +73,14 @@ Note that this is configured for remote debugging (for local debugging,
 change the IP address from 0.0.0.0 to 127.0.0.1).
 
 ### Test
-```
+```console
 $ npm t  
 ```
 
 
 ## Staging & Production
 ### Run
-```
+```console
 $ npm start   
 ```
 

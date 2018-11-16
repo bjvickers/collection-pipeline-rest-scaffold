@@ -5,6 +5,7 @@ import AddContextEmails from "../../pipeline/components/add-context-emails"
 import AssertDbUniqueUserEmail from "../../pipeline/components/assert-db-unique-user-email"
 import BuildDbQueryFromContext from "../../pipeline/components/build-db-query-from-context"
 import BuildEmailTemplates from "../../pipeline/components/build-email-templates"
+import HelloWorld from "../../pipeline/components/hello-world"
 import PersistNewDbModel from "../../pipeline/components/persist-new-db-model"
 import RunDbQuery from "../../pipeline/components/run-db-query"
 import SendEmails from "../../pipeline/components/send-emails"
@@ -26,6 +27,9 @@ export default function() {
     }),
     [TYPES.BuildDbQueryFromContext]: awilix.asValue({
       create: (config: IComponentConfig) => new BuildDbQueryFromContext(config)
+    }),
+    [TYPES.HelloWorld]: awilix.asValue({
+      create: (config: IComponentConfig) => new HelloWorld(config)
     }),
     [TYPES.RunDbQuery]: awilix.asValue({
       create: (config: IComponentConfig) => new RunDbQuery(config)

@@ -10,8 +10,8 @@ info:
 host: 127.0.0.1:3000
 basePath: /api/v1
 schemes:
- - http
- - https
+  - http
+  - https
 consumes:
   - application/json
 produces:
@@ -40,6 +40,20 @@ paths:
       responses:
         default:
           description: successful operation
+  /hello-world:
+    get:
+      summary: Gets a "hello world" string
+      description: Gets a "hello world" string
+      parameters: []
+      responses:
+        200:
+          description: success
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                enum: ["hello world"]
 definitions:
   User:
     type: object

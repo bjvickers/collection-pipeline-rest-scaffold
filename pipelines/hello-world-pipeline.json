@@ -1,0 +1,21 @@
+{
+  "name": "HelloWorldPipeline",
+  "components": [
+    {
+      "desc": "Send the hello world message",
+      "type": "HelloWorld",
+      "events": {
+        "fail": "fail",
+        "success": "success"
+      },
+      "handlers": {
+        "fail": "ResponseHandler",
+        "success": "ResponseHandler"
+      },
+      "responders": {
+        "fail": "Responder500",
+        "success": "Responder200"
+      }
+    }
+  ]
+}
