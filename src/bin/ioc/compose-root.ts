@@ -1,5 +1,3 @@
-"use strict"
-
 /**
  * This is the composition root for dependency injection
  */

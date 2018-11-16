@@ -1,5 +1,3 @@
-"use strict"
-
 import IComponentConfig from "./i-component-config"
 
 export default interface IPipelineConfig {

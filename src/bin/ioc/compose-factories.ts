@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import ComponentFactory from "../factories/component-factory"
 import NextHandlerFactory from "../factories/next-handler-factory"

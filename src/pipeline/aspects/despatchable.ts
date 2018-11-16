@@ -1,5 +1,3 @@
-"use strict"
-
 import Component from "../components/component"
 
 /* tslint:disable */

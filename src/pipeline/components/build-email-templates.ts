@@ -1,5 +1,3 @@
-"use strict"
-
 import { domainLogger } from "../../lib/log/logger"
 import IComponentConfig from "../schema/config/i-component-config"
 import IContext from "../schema/context/i-context"
@@ -18,6 +16,5 @@ export default class BuildEmailTemplates extends Component {
   */
   public execute(context: IContext): void {
     domainLogger.info({ component: this.constructor.name })
-    return
   }
 }

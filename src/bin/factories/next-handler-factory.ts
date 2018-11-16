@@ -1,5 +1,3 @@
-"use strict"
-
 import NextHandler from "../../pipeline/handlers/next-handler"
 import IPipeline from "../../pipeline/i-pipeline"
 import IComponentConfig from "../../pipeline/schema/config/i-component-config"

@@ -1,5 +1,3 @@
-"use strict"
-
 import EventEmitter from "events"
 import * as aspects from "../aspects/aspects"
 import IComponentConfig from "../schema/config/i-component-config"

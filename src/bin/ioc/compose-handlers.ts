@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import NextHandler from "../../pipeline/handlers/next-handler"
 import ResponseHandler from "../../pipeline/handlers/response-handler"

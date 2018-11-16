@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import AddContextEmails from "../../pipeline/components/add-context-emails"
 import AssertDbUniqueUserEmail from "../../pipeline/components/assert-db-unique-user-email"

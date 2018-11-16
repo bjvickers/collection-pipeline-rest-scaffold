@@ -1,5 +1,3 @@
-"use strict"
-
 import IResponder from "../responders/i-responder"
 import IContext from "../schema/context/i-context"
 import IHandler from "./i-handler"

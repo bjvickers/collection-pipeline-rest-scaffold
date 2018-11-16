@@ -1,5 +1,3 @@
-"use strict"
-
 import ResponseHandler from "../../pipeline/handlers/response-handler"
 import IResponder from "../../pipeline/responders/i-responder"
 

@@ -1,5 +1,3 @@
-"use strict"
-
 import Component from "../../pipeline/components/component"
 import IComponentConfig from "../../pipeline/schema/config/i-component-config"
 

@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import fs from "fs"
 import TYPES from "./types"

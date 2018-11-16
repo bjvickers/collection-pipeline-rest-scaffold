@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import Responder200 from "../../api/responders/responder-200"
 import Responder201 from "../../api/responders/responder-201"

@@ -1,5 +1,3 @@
-"use strict"
-
 import express from "express"
 
 // @TODO: Extract express further out

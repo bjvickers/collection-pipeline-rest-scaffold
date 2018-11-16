@@ -4,6 +4,8 @@
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold?ref=badge_shield)
 [![Known Vulnerabilities](https://snyk.io/test/github/bjvickers/collection-pipeline-rest-scaffold/badge.svg)](https://snyk.io/test/github/bjvickers/collection-pipeline-rest-scaffold)
 
+---
+
 ## Synopsis
 Experimental application using a collection pipeline architecture to implement
 endpoints in a RESTful application.
@@ -44,46 +46,88 @@ Individual component workflow is as follows:
 
 To get an idea of program operation, run the test: `npm run test:feature`
 
+---
 
-## Install
+## Implementing Endpoints (Pipelines)
+
+### Write tests
+Write the new pipeline feature test in `test/feature`
+
+### Update OpenAPI Spec
+Update the OpenAPI specification to define the new endpoint in `src/api/spec/api.yaml`
+
+### Add new API endpoint
+Create new `src/api/controllers` interface
+Create new `src/api/controllers` controller
+Create new `src/api/transformers` transformer
+Add new controller to src/api/application/Application (@TODO: Refactor so that changes not necessary)
+Add all new classes and interfaces to `src/bin/ioc/` and `src/bin/ioc/TYPES.ts`
+
+### Create the new pipeline configuration
+Create a new configuration file in `pipeline/`
+Add configuration file loading to `src/bin/ioc/compose-config.ts`
+
+### Implement any new component/task(s)
+Create any new component/task(s) in `src/pipeline/components/`
+Add the new component/task(s) to `src/bin/ioc/compose-components.ts` and `src/bin/ioc/TYPES.ts`
+
+---
+
+## Analysis
+The codebase provides the following reports:
+
+* Complexity report
+* Flamegraph report
+* Code coverage report
+* TODO/FIXME reminders report
+
+Reports can be generated using the following:
+
 ```console
-$ mkdir -vp project  
-$ cd project  
-$ git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
-$ npm i  
-$ npm run build && npm run qc  
+npm run report   
+```
+---
+
+## Build, Test, Debug, Run
+
+### Dependencies
+The following must be installed prior to building the application.
+Note that the application *may* run on older versions of NodeJS.
+
+* NodeJS >= 10
+* Bzip2
+
+### Install
+```console
+mkdir -vp project  
+cd project  
+git clone https://github.com/bjvickers/collection-pipeline-rest-scaffold.git .  
+npm i  
+npm run build && npm run qc  
 ```
 
-## Local
-### Run
+### Test
 ```console
-$ npm run start:reload  
+npm t  
 ```
-This will run the app whilst monitoring any changes to the Typescript files.
-Changes will be automatically transpiled and the application will automatically reload.
 
 ### Debug
 ```console
-$ npm run start:debug  
+npm run start:debug  
 ```
-As with `start:reload`, auto-compilation and reload will occur on any changes
-made to the Typescript files.
+Auto-compilation and reload will occur on any changes made to the Typescript files.
 
 Note that this is configured for remote debugging (for local debugging,
 change the IP address from 0.0.0.0 to 127.0.0.1).
 
-### Test
+## Run (Reload Mode)
 ```console
-$ npm t  
+npm run start:reload  
 ```
+This will run the app whilst monitoring any changes to the Typescript files.
+Changes will be automatically transpiled and the application will automatically reload.
 
-
-## Staging & Production
-### Run
+## Run (Production Mode)
 ```console
-$ npm start   
+npm start   
 ```
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcollection-pipeline-rest-scaffold?ref=badge_large)

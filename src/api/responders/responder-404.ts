@@ -1,5 +1,3 @@
-"use strict"
-
 import IResponder from "../../pipeline/responders/i-responder"
 import IContext from "../../pipeline/schema/context/i-context"
 

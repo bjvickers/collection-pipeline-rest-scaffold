@@ -1,5 +1,3 @@
-"use strict"
-
 import IEventConfig from "./i-event-config"
 import IHandlerConfig from "./i-handler-config"
 import IResponderConfig from "./i-responder-config"

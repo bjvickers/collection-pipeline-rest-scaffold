@@ -1,5 +1,3 @@
-"use strict"
-
 import Component from "../../pipeline/components/component"
 import NextHandler from "../../pipeline/handlers/next-handler"
 import ResponseHandler from "../../pipeline/handlers/response-handler"

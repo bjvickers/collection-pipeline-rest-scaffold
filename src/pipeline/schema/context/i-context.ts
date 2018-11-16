@@ -1,5 +1,3 @@
-"use strict"
-
 import IApi from "./i-api"
 import IDbQuery from "./i-db-query"
 import IEmailTemplate from "./i-email-template"

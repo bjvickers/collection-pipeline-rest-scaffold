@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import IServer from "../../api/server/i-server"
 import Server from "../../api/server/server"

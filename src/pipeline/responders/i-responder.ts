@@ -1,5 +1,3 @@
-"use strict"
-
 import IContext from "../schema/context/i-context"
 
 /**

@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import PipelineBuildDirector from "../builders/pipeline-build-director"
 import PipelineBuilder from "../builders/pipeline-builder"

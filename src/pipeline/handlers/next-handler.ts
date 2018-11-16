@@ -1,5 +1,3 @@
-"use strict"
-
 import IPipeline from "../i-pipeline"
 import IContext from "../schema/context/i-context"
 import IHandler from "./i-handler"

@@ -1,5 +1,3 @@
-"use strict"
-
 import IUser from "./i-user"
 
 export default class User implements IUser {

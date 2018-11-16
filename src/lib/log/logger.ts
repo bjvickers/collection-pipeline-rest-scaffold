@@ -1,5 +1,3 @@
-"use strict"
-
 // @TODO: Optimise pino performance with pino-extreme
 import pino = require("pino")
 

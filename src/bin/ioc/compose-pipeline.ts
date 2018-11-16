@@ -1,5 +1,3 @@
-"use strict"
-
 import * as awilix from "awilix"
 import Pipeline from "../../pipeline/pipeline"
 import IPipelineConfig from "../../pipeline/schema/config/i-pipeline-config"

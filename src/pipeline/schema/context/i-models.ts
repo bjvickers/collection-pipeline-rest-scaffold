@@ -1,5 +1,3 @@
-"use strict"
-
 import IUser from "../../../models/i-user"
 
 export default interface IModels {

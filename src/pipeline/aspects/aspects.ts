@@ -1,5 +1,3 @@
-"use strict"
-
 import despatchable from "./despatchable"
 import loggable from "./loggable"
 
