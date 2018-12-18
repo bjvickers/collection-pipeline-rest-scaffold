@@ -67,7 +67,7 @@
     "@types/pino": "^5.8.1",
     "@types/supertest": "^2.0.6",
     "@types/swagger-express-middleware": "^1.0.8",
-    "boxen": "^2.0.0",
+    "boxen": "^2.1.0",
     "chai": "^4.2.0",
     "check-for-leaks": "^1.2.0",
     "clinic": "^2.0.0",
