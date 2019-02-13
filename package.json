@@ -70,7 +70,7 @@
     "boxen": "^2.0.0",
     "chai": "^4.2.0",
     "check-for-leaks": "^1.2.0",
-    "clinic": "^2.0.0",
+    "clinic": "^3.0.0",
     "concurrently": "*",
     "depcheck": "^0.6.11",
     "express": "^4.16.4",
