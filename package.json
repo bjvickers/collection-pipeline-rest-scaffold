@@ -83,7 +83,7 @@
     "nyc": "^13.1.0",
     "plato": "^1.7.0",
     "shelljs": "^0.8.2",
-    "standard-version": "^4.4.0",
+    "standard-version": "^5.0.2",
     "supertest": "^3.3.0",
     "ts-mocha": "^2.0.0",
     "ts-node": "^7.0.1",
