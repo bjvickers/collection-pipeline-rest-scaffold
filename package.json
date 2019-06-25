@@ -71,7 +71,7 @@
     "chai": "^4.2.0",
     "check-for-leaks": "^1.2.0",
     "clinic": "^2.0.0",
-    "concurrently": "*",
+    "concurrently": "4.1.0",
     "depcheck": "^0.6.11",
     "express": "^4.16.4",
     "husky": "^1.1.3",
